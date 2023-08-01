@@ -1,4 +1,6 @@
 import React from 'react'
+import clothes3 from './assets/images/products/clothes-3.jpg';
+import clothes4 from './assets/images/products/clothes-4.jpg'
 
 const Category = () => {
   return (
@@ -347,175 +349,75 @@ const Category = () => {
                 <a href="#">Categories</a>
               </li>
               <li>
+                <a href="#">Womens</a>
+              </li>
+              <li>
                 <a href="#">Casuals</a>
               </li>
             </ul>
             <div className="product-grid">
-              <div className="showcase">
+            <div className="showcase">
                 <div className="showcase-banner">
                   <img
-                    src="assets/images/products/jacket-3.jpg"
-                    alt="Mens Winter Leathers Jackets"
-                    width={300}
-                    className="product-img default"
-                  />
-                  <img
-                    src="assets/images/products/jacket-4.jpg"
-                    alt="Mens Winter Leathers Jackets"
-                    width={300}
-                    className="product-img hover"
-                  />
-                  <p className="showcase-badge">15%</p>
-                  <div className="showcase-actions">
-                    <button className="btn-action">
-                      <ion-icon name="heart-outline" />
-                    </button>
-                    <button className="btn-action">
-                      <ion-icon name="eye-outline" />
-                    </button>
-                    <button className="btn-action">
-                      <ion-icon name="repeat-outline" />
-                    </button>
-                    <button className="btn-action">
-                      <ion-icon name="bag-add-outline" />
-                    </button>
-                  </div>
-                </div>
-                <div className="showcase-content">
-                  <a href="index.html#" className="showcase-category">
-                    jacket
-                  </a>
-                  <a href="index.html#">
-                    <h3 className="showcase-title">
-                      Mens Winter Leathers Jackets
-                    </h3>
-                  </a>
-                  <div className="showcase-rating">
-                    <ion-icon name="star" />
-                    <ion-icon name="star" />
-                    <ion-icon name="star" />
-                    <ion-icon name="star-outline" />
-                    <ion-icon name="star-outline" />
-                  </div>
-                  <div className="price-box">
-                    <p className="price">$48.00</p>
-                    <del>$75.00</del>
-                  </div>
-                </div>
-              </div>
-              <div className="showcase">
-                <div className="showcase-banner">
-                  <img
-                    src="assets/images/products/shirt-1.jpg"
-                    alt="Pure Garment Dyed Cotton Shirt"
-                    className="product-img default"
-                    width={300}
-                  />
-                  <img
-                    src="assets/images/products/shirt-2.jpg"
-                    alt="Pure Garment Dyed Cotton Shirt"
-                    className="product-img hover"
-                    width={300}
-                  />
-                  <p className="showcase-badge angle black">sale</p>
-                  <div className="showcase-actions">
-                    <button className="btn-action">
-                      <ion-icon name="heart-outline" />
-                    </button>
-                    <button className="btn-action">
-                      <ion-icon name="eye-outline" />
-                    </button>
-                    <button className="btn-action">
-                      <ion-icon name="repeat-outline" />
-                    </button>
-                    <button className="btn-action">
-                      <ion-icon name="bag-add-outline" />
-                    </button>
-                  </div>
-                </div>
-                <div className="showcase-content">
-                  <a href="index.html#" className="showcase-category">
-                    shirt
-                  </a>
-                  <h3>
-                    <a href="index.html#" className="showcase-title">
-                      Pure Garment Dyed Cotton Shirt
-                    </a>
-                  </h3>
-                  <div className="showcase-rating">
-                    <ion-icon name="star" />
-                    <ion-icon name="star" />
-                    <ion-icon name="star" />
-                    <ion-icon name="star-outline" />
-                    <ion-icon name="star-outline" />
-                  </div>
-                  <div className="price-box">
-                    <p className="price">$45.00</p>
-                    <del>$56.00</del>
-                  </div>
-                </div>
-              </div>
-              <div className="showcase">
-                <div className="showcase-banner">
-                  <img
-                    src="assets/images/products/jacket-5.jpg"
-                    alt="MEN Yarn Fleece Full-Zip Jacket"
-                    className="product-img default"
-                    width={300}
-                  />
-                  <img
-                    src="assets/images/products/jacket-6.jpg"
-                    alt="MEN Yarn Fleece Full-Zip Jacket"
-                    className="product-img hover"
-                    width={300}
-                  />
-                  <div className="showcase-actions">
-                    <button className="btn-action">
-                      <ion-icon name="heart-outline" />
-                    </button>
-                    <button className="btn-action">
-                      <ion-icon name="eye-outline" />
-                    </button>
-                    <button className="btn-action">
-                      <ion-icon name="repeat-outline" />
-                    </button>
-                    <button className="btn-action">
-                      <ion-icon name="bag-add-outline" />
-                    </button>
-                  </div>
-                </div>
-                <div className="showcase-content">
-                  <a href="index.html#" className="showcase-category">
-                    Jacket
-                  </a>
-                  <h3>
-                    <a href="index.html#" className="showcase-title">
-                      MEN Yarn Fleece Full-Zip Jacket
-                    </a>
-                  </h3>
-                  <div className="showcase-rating">
-                    <ion-icon name="star" />
-                    <ion-icon name="star" />
-                    <ion-icon name="star" />
-                    <ion-icon name="star-outline" />
-                    <ion-icon name="star-outline" />
-                  </div>
-                  <div className="price-box">
-                    <p className="price">$58.00</p>
-                    <del>$65.00</del>
-                  </div>
-                </div>
-              </div>
-              <div className="showcase">
-                <div className="showcase-banner">
-                  <img
-                    src="assets/images/products/clothes-3.jpg"
+                    src={clothes3}
                     alt="Black Floral Wrap Midi Skirt"
                     className="product-img default"
                     width={300}
                   />
                   <img
-                    src="assets/images/products/clothes-4.jpg"
+                    src={clothes4}
+                    alt="Black Floral Wrap Midi Skirt"
+                    className="product-img hover"
+                    width={300}
+                  />
+                  <p className="showcase-badge angle pink">new</p>
+                  <div className="showcase-actions">
+                    <button className="btn-action">
+                      <ion-icon name="heart-outline" />
+                    </button>
+                    <button className="btn-action">
+                      <ion-icon name="eye-outline" />
+                    </button>
+                    <button className="btn-action">
+                      <ion-icon name="repeat-outline" />
+                    </button>
+                    <button className="btn-action">
+                      <ion-icon name="bag-add-outline" />
+                    </button>
+                  </div>
+                </div>
+                <div className="showcase-content">
+                  <a href="index.html#" className="showcase-category">
+                    skirt
+                  </a>
+                  <h3>
+                    <a href="index.html#" className="showcase-title">
+                      Black Floral Wrap Midi Skirt
+                    </a>
+                  </h3>
+                  <div className="showcase-rating">
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
+                  </div>
+                  <div className="price-box">
+                    <p className="price">$25.00</p>
+                    <del>$35.00</del>
+                  </div>
+                </div>
+              </div>
+             <div className="showcase">
+                <div className="showcase-banner">
+                  <img
+                    src={clothes3}
+                    alt="Black Floral Wrap Midi Skirt"
+                    className="product-img default"
+                    width={300}
+                  />
+                  <img
+                    src={clothes4}
                     alt="Black Floral Wrap Midi Skirt"
                     className="product-img hover"
                     width={300}
@@ -561,17 +463,18 @@ const Category = () => {
               <div className="showcase">
                 <div className="showcase-banner">
                   <img
-                    src="assets/images/products/shoe-2.jpg"
-                    alt="Casual Men's Brown shoes"
+                    src={clothes3}
+                    alt="Black Floral Wrap Midi Skirt"
                     className="product-img default"
                     width={300}
                   />
                   <img
-                    src="assets/images/products/shoe-2_1.jpg"
-                    alt="Casual Men's Brown shoes"
+                    src={clothes4}
+                    alt="Black Floral Wrap Midi Skirt"
                     className="product-img hover"
                     width={300}
                   />
+                  <p className="showcase-badge angle pink">new</p>
                   <div className="showcase-actions">
                     <button className="btn-action">
                       <ion-icon name="heart-outline" />
@@ -589,11 +492,11 @@ const Category = () => {
                 </div>
                 <div className="showcase-content">
                   <a href="index.html#" className="showcase-category">
-                    casual
+                    skirt
                   </a>
                   <h3>
                     <a href="index.html#" className="showcase-title">
-                      Casual Men's Brown shoes
+                      Black Floral Wrap Midi Skirt
                     </a>
                   </h3>
                   <div className="showcase-rating">
@@ -602,182 +505,28 @@ const Category = () => {
                     <ion-icon name="star" />
                     <ion-icon name="star" />
                     <ion-icon name="star" />
-                  </div>
-                  <div className="price-box">
-                    <p className="price">$99.00</p>
-                    <del>$105.00</del>
-                  </div>
-                </div>
-              </div>
-              <div className="showcase">
-                <div className="showcase-banner">
-                  <img
-                    src="assets/images/products/watch-3.jpg"
-                    alt="Pocket Watch Leather Pouch"
-                    className="product-img default"
-                    width={300}
-                  />
-                  <img
-                    src="assets/images/products/watch-4.jpg"
-                    alt="Pocket Watch Leather Pouch"
-                    className="product-img hover"
-                    width={300}
-                  />
-                  <p className="showcase-badge angle black">sale</p>
-                  <div className="showcase-actions">
-                    <button className="btn-action">
-                      <ion-icon name="heart-outline" />
-                    </button>
-                    <button className="btn-action">
-                      <ion-icon name="eye-outline" />
-                    </button>
-                    <button className="btn-action">
-                      <ion-icon name="repeat-outline" />
-                    </button>
-                    <button className="btn-action">
-                      <ion-icon name="bag-add-outline" />
-                    </button>
-                  </div>
-                </div>
-                <div className="showcase-content">
-                  <a href="index.html#" className="showcase-category">
-                    watches
-                  </a>
-                  <h3>
-                    <a href="index.html#" className="showcase-title">
-                      Pocket Watch Leather Pouch
-                    </a>
-                  </h3>
-                  <div className="showcase-rating">
-                    <ion-icon name="star" />
-                    <ion-icon name="star" />
-                    <ion-icon name="star" />
-                    <ion-icon name="star-outline" />
-                    <ion-icon name="star-outline" />
-                  </div>
-                  <div className="price-box">
-                    <p className="price">$150.00</p>
-                    <del>$170.00</del>
-                  </div>
-                </div>
-              </div>
-              <div className="showcase">
-                <div className="showcase-banner">
-                  <img
-                    src="assets/images/products/watch-1.jpg"
-                    alt="Smart watche Vital Plus"
-                    className="product-img default"
-                    width={300}
-                  />
-                  <img
-                    src="assets/images/products/watch-2.jpg"
-                    alt="Smart watche Vital Plus"
-                    className="product-img hover"
-                    width={300}
-                  />
-                  <div className="showcase-actions">
-                    <button className="btn-action">
-                      <ion-icon name="heart-outline" />
-                    </button>
-                    <button className="btn-action">
-                      <ion-icon name="eye-outline" />
-                    </button>
-                    <button className="btn-action">
-                      <ion-icon name="repeat-outline" />
-                    </button>
-                    <button className="btn-action">
-                      <ion-icon name="bag-add-outline" />
-                    </button>
-                  </div>
-                </div>
-                <div className="showcase-content">
-                  <a href="index.html#" className="showcase-category">
-                    watches
-                  </a>
-                  <h3>
-                    <a href="index.html#" className="showcase-title">
-                      Smart watche Vital Plus
-                    </a>
-                  </h3>
-                  <div className="showcase-rating">
-                    <ion-icon name="star" />
-                    <ion-icon name="star" />
-                    <ion-icon name="star" />
-                    <ion-icon name="star" />
-                    <ion-icon name="star-outline" />
-                  </div>
-                  <div className="price-box">
-                    <p className="price">$100.00</p>
-                    <del>$120.00</del>
-                  </div>
-                </div>
-              </div>
-              <div className="showcase">
-                <div className="showcase-banner">
-                  <img
-                    src="assets/images/products/party-wear-1.jpg"
-                    alt="Womens Party Wear Shoes"
-                    className="product-img default"
-                    width={300}
-                  />
-                  <img
-                    src="assets/images/products/party-wear-2.jpg"
-                    alt="Womens Party Wear Shoes"
-                    className="product-img hover"
-                    width={300}
-                  />
-                  <p className="showcase-badge angle black">sale</p>
-                  <div className="showcase-actions">
-                    <button className="btn-action">
-                      <ion-icon name="heart-outline" />
-                    </button>
-                    <button className="btn-action">
-                      <ion-icon name="eye-outline" />
-                    </button>
-                    <button className="btn-action">
-                      <ion-icon name="repeat-outline" />
-                    </button>
-                    <button className="btn-action">
-                      <ion-icon name="bag-add-outline" />
-                    </button>
-                  </div>
-                </div>
-                <div className="showcase-content">
-                  <a href="index.html#" className="showcase-category">
-                    party wear
-                  </a>
-                  <h3>
-                    <a href="index.html#" className="showcase-title">
-                      Womens Party Wear Shoes
-                    </a>
-                  </h3>
-                  <div className="showcase-rating">
-                    <ion-icon name="star" />
-                    <ion-icon name="star" />
-                    <ion-icon name="star" />
-                    <ion-icon name="star-outline" />
-                    <ion-icon name="star-outline" />
                   </div>
                   <div className="price-box">
                     <p className="price">$25.00</p>
-                    <del>$30.00</del>
+                    <del>$35.00</del>
                   </div>
                 </div>
               </div>
               <div className="showcase">
                 <div className="showcase-banner">
                   <img
-                    src="assets/images/products/jacket-1.jpg"
-                    alt="Mens Winter Leathers Jackets"
+                    src={clothes3}
+                    alt="Black Floral Wrap Midi Skirt"
                     className="product-img default"
                     width={300}
                   />
                   <img
-                    src="assets/images/products/jacket-2.jpg"
-                    alt="Mens Winter Leathers Jackets"
+                    src={clothes4}
+                    alt="Black Floral Wrap Midi Skirt"
                     className="product-img hover"
                     width={300}
                   />
+                  <p className="showcase-badge angle pink">new</p>
                   <div className="showcase-actions">
                     <button className="btn-action">
                       <ion-icon name="heart-outline" />
@@ -795,11 +544,11 @@ const Category = () => {
                 </div>
                 <div className="showcase-content">
                   <a href="index.html#" className="showcase-category">
-                    jacket
+                    skirt
                   </a>
                   <h3>
                     <a href="index.html#" className="showcase-title">
-                      Mens Winter Leathers Jackets
+                      Black Floral Wrap Midi Skirt
                     </a>
                   </h3>
                   <div className="showcase-rating">
@@ -807,29 +556,29 @@ const Category = () => {
                     <ion-icon name="star" />
                     <ion-icon name="star" />
                     <ion-icon name="star" />
-                    <ion-icon name="star-outline" />
+                    <ion-icon name="star" />
                   </div>
                   <div className="price-box">
-                    <p className="price">$32.00</p>
-                    <del>$45.00</del>
+                    <p className="price">$25.00</p>
+                    <del>$35.00</del>
                   </div>
                 </div>
               </div>
               <div className="showcase">
                 <div className="showcase-banner">
                   <img
-                    src="assets/images/products/sports-2.jpg"
-                    alt="Trekking & Running Shoes - black"
+                    src={clothes3}
+                    alt="Black Floral Wrap Midi Skirt"
                     className="product-img default"
                     width={300}
                   />
                   <img
-                    src="assets/images/products/sports-4.jpg"
-                    alt="Trekking & Running Shoes - black"
+                    src={clothes4}
+                    alt="Black Floral Wrap Midi Skirt"
                     className="product-img hover"
                     width={300}
                   />
-                  <p className="showcase-badge angle black">sale</p>
+                  <p className="showcase-badge angle pink">new</p>
                   <div className="showcase-actions">
                     <button className="btn-action">
                       <ion-icon name="heart-outline" />
@@ -847,40 +596,41 @@ const Category = () => {
                 </div>
                 <div className="showcase-content">
                   <a href="index.html#" className="showcase-category">
-                    sports
+                    skirt
                   </a>
                   <h3>
                     <a href="index.html#" className="showcase-title">
-                      Trekking &amp; Running Shoes - black
+                      Black Floral Wrap Midi Skirt
                     </a>
                   </h3>
                   <div className="showcase-rating">
                     <ion-icon name="star" />
                     <ion-icon name="star" />
                     <ion-icon name="star" />
-                    <ion-icon name="star-outline" />
-                    <ion-icon name="star-outline" />
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
                   </div>
                   <div className="price-box">
-                    <p className="price">$58.00</p>
-                    <del>$64.00</del>
+                    <p className="price">$25.00</p>
+                    <del>$35.00</del>
                   </div>
                 </div>
               </div>
               <div className="showcase">
                 <div className="showcase-banner">
                   <img
-                    src="assets/images/products/shoe-1.jpg"
-                    alt="Men's Leather Formal Wear shoes"
+                    src={clothes3}
+                    alt="Black Floral Wrap Midi Skirt"
                     className="product-img default"
                     width={300}
                   />
                   <img
-                    src="assets/images/products/shoe-1_1.jpg"
-                    alt="Men's Leather Formal Wear shoes"
+                    src={clothes4}
+                    alt="Black Floral Wrap Midi Skirt"
                     className="product-img hover"
                     width={300}
                   />
+                  <p className="showcase-badge angle pink">new</p>
                   <div className="showcase-actions">
                     <button className="btn-action">
                       <ion-icon name="heart-outline" />
@@ -898,11 +648,11 @@ const Category = () => {
                 </div>
                 <div className="showcase-content">
                   <a href="index.html#" className="showcase-category">
-                    formal
+                    skirt
                   </a>
                   <h3>
                     <a href="index.html#" className="showcase-title">
-                      Men's Leather Formal Wear shoes
+                      Black Floral Wrap Midi Skirt
                     </a>
                   </h3>
                   <div className="showcase-rating">
@@ -910,29 +660,29 @@ const Category = () => {
                     <ion-icon name="star" />
                     <ion-icon name="star" />
                     <ion-icon name="star" />
-                    <ion-icon name="star-outline" />
+                    <ion-icon name="star" />
                   </div>
                   <div className="price-box">
-                    <p className="price">$50.00</p>
-                    <del>$65.00</del>
+                    <p className="price">$25.00</p>
+                    <del>$35.00</del>
                   </div>
                 </div>
               </div>
               <div className="showcase">
                 <div className="showcase-banner">
                   <img
-                    src="assets/images/products/shorts-1.jpg"
-                    alt="Better Basics French Terry Sweatshorts"
+                    src={clothes3}
+                    alt="Black Floral Wrap Midi Skirt"
                     className="product-img default"
                     width={300}
                   />
                   <img
-                    src="assets/images/products/shorts-2.jpg"
-                    alt="Better Basics French Terry Sweatshorts"
+                    src={clothes4}
+                    alt="Black Floral Wrap Midi Skirt"
                     className="product-img hover"
                     width={300}
                   />
-                  <p className="showcase-badge angle black">sale</p>
+                  <p className="showcase-badge angle pink">new</p>
                   <div className="showcase-actions">
                     <button className="btn-action">
                       <ion-icon name="heart-outline" />
@@ -950,26 +700,236 @@ const Category = () => {
                 </div>
                 <div className="showcase-content">
                   <a href="index.html#" className="showcase-category">
-                    shorts
+                    skirt
                   </a>
                   <h3>
                     <a href="index.html#" className="showcase-title">
-                      Better Basics French Terry Sweatshorts
+                      Black Floral Wrap Midi Skirt
                     </a>
                   </h3>
                   <div className="showcase-rating">
                     <ion-icon name="star" />
                     <ion-icon name="star" />
                     <ion-icon name="star" />
-                    <ion-icon name="star-outline" />
-                    <ion-icon name="star-outline" />
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
                   </div>
                   <div className="price-box">
-                    <p className="price">$78.00</p>
-                    <del>$85.00</del>
+                    <p className="price">$25.00</p>
+                    <del>$35.00</del>
                   </div>
                 </div>
               </div>
+              <div className="showcase">
+                <div className="showcase-banner">
+                  <img
+                    src={clothes3}
+                    alt="Black Floral Wrap Midi Skirt"
+                    className="product-img default"
+                    width={300}
+                  />
+                  <img
+                    src={clothes4}
+                    alt="Black Floral Wrap Midi Skirt"
+                    className="product-img hover"
+                    width={300}
+                  />
+                  <p className="showcase-badge angle pink">new</p>
+                  <div className="showcase-actions">
+                    <button className="btn-action">
+                      <ion-icon name="heart-outline" />
+                    </button>
+                    <button className="btn-action">
+                      <ion-icon name="eye-outline" />
+                    </button>
+                    <button className="btn-action">
+                      <ion-icon name="repeat-outline" />
+                    </button>
+                    <button className="btn-action">
+                      <ion-icon name="bag-add-outline" />
+                    </button>
+                  </div>
+                </div>
+                <div className="showcase-content">
+                  <a href="index.html#" className="showcase-category">
+                    skirt
+                  </a>
+                  <h3>
+                    <a href="index.html#" className="showcase-title">
+                      Black Floral Wrap Midi Skirt
+                    </a>
+                  </h3>
+                  <div className="showcase-rating">
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
+                  </div>
+                  <div className="price-box">
+                    <p className="price">$25.00</p>
+                    <del>$35.00</del>
+                  </div>
+                </div>
+              </div>
+              <div className="showcase">
+                <div className="showcase-banner">
+                  <img
+                    src={clothes3}
+                    alt="Black Floral Wrap Midi Skirt"
+                    className="product-img default"
+                    width={300}
+                  />
+                  <img
+                    src={clothes4}
+                    alt="Black Floral Wrap Midi Skirt"
+                    className="product-img hover"
+                    width={300}
+                  />
+                  <p className="showcase-badge angle pink">new</p>
+                  <div className="showcase-actions">
+                    <button className="btn-action">
+                      <ion-icon name="heart-outline" />
+                    </button>
+                    <button className="btn-action">
+                      <ion-icon name="eye-outline" />
+                    </button>
+                    <button className="btn-action">
+                      <ion-icon name="repeat-outline" />
+                    </button>
+                    <button className="btn-action">
+                      <ion-icon name="bag-add-outline" />
+                    </button>
+                  </div>
+                </div>
+                <div className="showcase-content">
+                  <a href="index.html#" className="showcase-category">
+                    skirt
+                  </a>
+                  <h3>
+                    <a href="index.html#" className="showcase-title">
+                      Black Floral Wrap Midi Skirt
+                    </a>
+                  </h3>
+                  <div className="showcase-rating">
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
+                  </div>
+                  <div className="price-box">
+                    <p className="price">$25.00</p>
+                    <del>$35.00</del>
+                  </div>
+                </div>
+              </div>
+              <div className="showcase">
+                <div className="showcase-banner">
+                  <img
+                    src={clothes3}
+                    alt="Black Floral Wrap Midi Skirt"
+                    className="product-img default"
+                    width={300}
+                  />
+                  <img
+                    src={clothes4}
+                    alt="Black Floral Wrap Midi Skirt"
+                    className="product-img hover"
+                    width={300}
+                  />
+                  <p className="showcase-badge angle pink">new</p>
+                  <div className="showcase-actions">
+                    <button className="btn-action">
+                      <ion-icon name="heart-outline" />
+                    </button>
+                    <button className="btn-action">
+                      <ion-icon name="eye-outline" />
+                    </button>
+                    <button className="btn-action">
+                      <ion-icon name="repeat-outline" />
+                    </button>
+                    <button className="btn-action">
+                      <ion-icon name="bag-add-outline" />
+                    </button>
+                  </div>
+                </div>
+                <div className="showcase-content">
+                  <a href="index.html#" className="showcase-category">
+                    skirt
+                  </a>
+                  <h3>
+                    <a href="index.html#" className="showcase-title">
+                      Black Floral Wrap Midi Skirt
+                    </a>
+                  </h3>
+                  <div className="showcase-rating">
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
+                  </div>
+                  <div className="price-box">
+                    <p className="price">$25.00</p>
+                    <del>$35.00</del>
+                  </div>
+                </div>
+              </div>
+              <div className="showcase">
+                <div className="showcase-banner">
+                  <img
+                    src={clothes3}
+                    alt="Black Floral Wrap Midi Skirt"
+                    className="product-img default"
+                    width={300}
+                  />
+                  <img
+                    src={clothes4}
+                    alt="Black Floral Wrap Midi Skirt"
+                    className="product-img hover"
+                    width={300}
+                  />
+                  <p className="showcase-badge angle pink">new</p>
+                  <div className="showcase-actions">
+                    <button className="btn-action">
+                      <ion-icon name="heart-outline" />
+                    </button>
+                    <button className="btn-action">
+                      <ion-icon name="eye-outline" />
+                    </button>
+                    <button className="btn-action">
+                      <ion-icon name="repeat-outline" />
+                    </button>
+                    <button className="btn-action">
+                      <ion-icon name="bag-add-outline" />
+                    </button>
+                  </div>
+                </div>
+                <div className="showcase-content">
+                  <a href="index.html#" className="showcase-category">
+                    skirt
+                  </a>
+                  <h3>
+                    <a href="index.html#" className="showcase-title">
+                      Black Floral Wrap Midi Skirt
+                    </a>
+                  </h3>
+                  <div className="showcase-rating">
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
+                    <ion-icon name="star" />
+                  </div>
+                  <div className="price-box">
+                    <p className="price">$25.00</p>
+                    <del>$35.00</del>
+                  </div>
+                </div>
+              </div>
+             
+
             </div>
           </div>
         </div>

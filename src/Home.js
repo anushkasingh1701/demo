@@ -1,10 +1,102 @@
 import React from 'react'
+
+import "./components/Accordian"
+import "./components/Mobilemenu"
+
+//banners
 import banner1 from './assets/images/banner-1.jpg'
+import banner2 from './assets/images/banner-2.jpg'
+import banner3 from './assets/images/banner-3.jpg'
+//icons
+import dressicon from './assets/images/icons/dress.svg'
+import coaticon from './assets/images/icons/coat.svg'
+import glassicon from './assets/images/icons/glasses.svg'
+import shoesicon from './assets/images/icons/shoes.svg'
+import bagicon from './assets/images/icons/bag.svg'
+import cosmeticsicon from './assets/images/icons/cosmetics.svg'
+import haticon from './assets/images/icons/hat.svg'
+import jacketicon from './assets/images/icons/jacket.svg'
+import jewelryicon from './assets/images/icons/jewelry.svg'
+import perfumeicon from './assets/images/icons/perfume.svg'
+import quotesicon from './assets/images/icons/quotes.svg'
+import shortsicon from './assets/images/icons/shorts.svg'
+import teeicon from './assets/images/icons/tee.svg'
+import watchicon from './assets/images/icons/watch.svg'
+
+//products
+import one from './assets/images/products/1.jpg'
+import two from './assets/images/products/2.jpg'
+import three from './assets/images/products/3.jpg'
+import four from './assets/images/products/4.jpg'
+import belt from './assets/images/products/belt.jpg'
+import clothes1 from './assets/images/products/clothes-1.jpg'
+import clothes2 from './assets/images/products/clothes-2.jpg'
+import clothes3 from './assets/images/products/clothes-3.jpg'
+import clothes4 from './assets/images/products/clothes-4.jpg'
+import jacket1 from './assets/images/products/jacket-1.jpg'
+import jacket2 from './assets/images/products/jacket-2.jpg'
+import jacket3 from './assets/images/products/jacket-3.jpg'
+import jacket4 from './assets/images/products/jacket-4.jpg'
+import jacket5 from './assets/images/products/jacket-5.jpg'
+import jacket6 from './assets/images/products/jacket-6.jpg'
+import jewellery1 from './assets/images/products/jewellery-1.jpg'
+import jewellery2 from './assets/images/products/jewellery-2.jpg'
+import jewellery3 from './assets/images/products/jewellery-3.jpg'
+import partywear1 from './assets/images/products/party-wear-1.jpg'
+import partywear2 from './assets/images/products/party-wear-2.jpg'
+import perfume from './assets/images/products/perfume.jpg'
+import shampoo from './assets/images/products/shampoo.jpg'
+import shirt1 from './assets/images/products/shirt-1.jpg'
+import shirt2 from './assets/images/products/shirt-2.jpg'
+import shoe1 from './assets/images/products/shoe-1.jpg'
+import shoe1_1 from './assets/images/products/shoe-1_1.jpg'
+import shoe2 from './assets/images/products/shoe-2.jpg'
+import shoe2_1 from './assets/images/products/shoe-2_1.jpg'
+import shoe3 from './assets/images/products/shoe-3.jpg'
+import shorts1 from './assets/images/products/shorts-1.jpg'
+import shorts2 from './assets/images/products/shorts-2.jpg'
+import sports1 from './assets/images/products/sports-1.jpg'
+import sports2 from './assets/images/products/sports-2.jpg'
+import sports3 from './assets/images/products/sports-3.jpg'
+import sports4 from './assets/images/products/sports-4.jpg'
+// import sports5 from './assets/images/products/sports-5.jpg'
+import sports6 from './assets/images/products/sports-6.jpg'
+import watch1 from './assets/images/products/watch-1.jpg'
+import watch2 from './assets/images/products/watch-2.jpg'
+import watch3 from './assets/images/products/watch-3.jpg'
+import watch4 from './assets/images/products/watch-4.jpg'
+
+//testimonial
+import testimonial1 from './assets/images/testimonial-1.jpg'
+import ctabanner from './assets/images/cta-banner.jpg'
+
+//blogs
+import blog1 from './assets/images/blog-1.jpg'
+import blog2 from './assets/images/blog-2.jpg'
+import blog3 from './assets/images/blog-3.jpg'
+import blog4 from './assets/images/blog-4.jpg'
+
+// //newsletter
+import { useState } from 'react'
+import Newsletter from './components/Newsletter'
+
+//notification
+import Notification from './components/Notification'
+
+
 
 const Home = () => {
+  const[modalOpen, setmodal ] = useState(true);
+  const[notificationOpen, setnotification] = useState(true);
+  
+  
   return (
     <>
-
+    { modalOpen && (<Newsletter setmodal={setmodal}/>)}
+    
+    {notificationOpen && (<Notification setnotification ={setnotification}/> )}
+     
+  
   {/*
     - MAIN
   */}
@@ -34,7 +126,7 @@ const Home = () => {
           </div>
           <div className="slider-item">
             <img
-              src="assets/images/banner-2.jpg"
+              src={banner2}
               alt="modern sunglasses"
               className="banner-img"
             />
@@ -51,7 +143,7 @@ const Home = () => {
           </div>
           <div className="slider-item">
             <img
-              src="assets/images/banner-3.jpg"
+              src={banner3}
               alt="new fashion summer sale"
               className="banner-img"
             />
@@ -78,7 +170,7 @@ const Home = () => {
           <div className="category-item">
             <div className="category-img-box">
               <img
-                src="assets/images/icons/dress.svg"
+                src={dressicon}
                 alt="dress & frock"
                 width={30}
               />
@@ -96,7 +188,7 @@ const Home = () => {
           <div className="category-item">
             <div className="category-img-box">
               <img
-                src="assets/images/icons/coat.svg"
+                src={coaticon}
                 alt="winter wear"
                 width={30}
               />
@@ -114,7 +206,7 @@ const Home = () => {
           <div className="category-item">
             <div className="category-img-box">
               <img
-                src="assets/images/icons/glasses.svg"
+                src={glassicon}
                 alt="glasses & lens"
                 width={30}
               />
@@ -132,7 +224,7 @@ const Home = () => {
           <div className="category-item">
             <div className="category-img-box">
               <img
-                src="assets/images/icons/shorts.svg"
+                src={shortsicon}
                 alt="shorts & jeans"
                 width={30}
               />
@@ -150,7 +242,7 @@ const Home = () => {
           <div className="category-item">
             <div className="category-img-box">
               <img
-                src="assets/images/icons/tee.svg"
+                src={teeicon}
                 alt="t-shirts"
                 width={30}
               />
@@ -168,7 +260,7 @@ const Home = () => {
           <div className="category-item">
             <div className="category-img-box">
               <img
-                src="assets/images/icons/jacket.svg"
+                src={jacketicon}
                 alt="jacket"
                 width={30}
               />
@@ -185,7 +277,7 @@ const Home = () => {
           </div>
           <div className="category-item">
             <div className="category-img-box">
-              <img src="assets/images/icons/watch.svg" alt="watch" width={30} />
+              <img src={watchicon} alt="watch" width={30} />
             </div>
             <div className="category-content-box">
               <div className="category-content-flex">
@@ -200,7 +292,7 @@ const Home = () => {
           <div className="category-item">
             <div className="category-img-box">
               <img
-                src="assets/images/icons/hat.svg"
+                src={haticon}
                 alt="hat & caps"
                 width={30}
               />
@@ -245,7 +337,7 @@ const Home = () => {
                 >
                   <div className="menu-title-flex">
                     <img
-                      src="assets/images/icons/dress.svg"
+                      src={dressicon}
                       alt="clothes"
                       width={20}
                       height={20}
@@ -316,7 +408,7 @@ const Home = () => {
                 >
                   <div className="menu-title-flex">
                     <img
-                      src="assets/images/icons/shoes.svg"
+                      src={shoesicon}
                       alt="footwear"
                       className="menu-title-img"
                       width={20}
@@ -387,7 +479,7 @@ const Home = () => {
                 >
                   <div className="menu-title-flex">
                     <img
-                      src="assets/images/icons/jewelry.svg"
+                      src={jewelryicon}
                       alt="clothes"
                       className="menu-title-img"
                       width={20}
@@ -446,7 +538,7 @@ const Home = () => {
                 >
                   <div className="menu-title-flex">
                     <img
-                      src="assets/images/icons/perfume.svg"
+                      src={perfumeicon}
                       alt="perfume"
                       className="menu-title-img"
                       width={20}
@@ -517,7 +609,7 @@ const Home = () => {
                 >
                   <div className="menu-title-flex">
                     <img
-                      src="assets/images/icons/cosmetics.svg"
+                      src={cosmeticsicon}
                       alt="cosmetics"
                       className="menu-title-img"
                       width={20}
@@ -588,7 +680,7 @@ const Home = () => {
                 >
                   <div className="menu-title-flex">
                     <img
-                      src="assets/images/icons/glasses.svg"
+                      src={glassicon}
                       alt="glasses"
                       className="menu-title-img"
                       width={20}
@@ -635,7 +727,7 @@ const Home = () => {
                 >
                   <div className="menu-title-flex">
                     <img
-                      src="assets/images/icons/bag.svg"
+                      src={bagicon}
                       alt="bags"
                       className="menu-title-img"
                       width={20}
@@ -708,7 +800,7 @@ const Home = () => {
                 <div className="showcase">
                   <a href="index.html#" className="showcase-img-box">
                     <img
-                      src="assets/images/products/1.jpg"
+                      src={one}
                       alt="baby fabric shoes"
                       width={75}
                       height={75}
@@ -735,7 +827,7 @@ const Home = () => {
                 <div className="showcase">
                   <a href="index.html#" className="showcase-img-box">
                     <img
-                      src="assets/images/products/2.jpg"
+                      src={two}
                       alt="men's hoodies t-shirt"
                       className="showcase-img"
                       width={75}
@@ -762,7 +854,7 @@ const Home = () => {
                 <div className="showcase">
                   <a href="index.html#" className="showcase-img-box">
                     <img
-                      src="assets/images/products/3.jpg"
+                      src={three}
                       alt="girls t-shirt"
                       className="showcase-img"
                       width={75}
@@ -789,7 +881,7 @@ const Home = () => {
                 <div className="showcase">
                   <a href="index.html#" className="showcase-img-box">
                     <img
-                      src="assets/images/products/4.jpg"
+                      src={four}
                       alt="woolen hat for men"
                       className="showcase-img"
                       width={75}
@@ -829,7 +921,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/clothes-1.jpg"
+                        src={clothes1}
                         alt="relaxed short full sleeve t-shirt"
                         width={70}
                         className="showcase-img"
@@ -853,7 +945,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/clothes-2.jpg"
+                        src={clothes2}
                         alt="girls pink embro design top"
                         className="showcase-img"
                         width={70}
@@ -877,7 +969,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/clothes-3.jpg"
+                        src={clothes3}
                         alt="black floral wrap midi skirt"
                         className="showcase-img"
                         width={70}
@@ -901,7 +993,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/shirt-1.jpg"
+                        src={shirt1}
                         alt="pure garment dyed cotton shirt"
                         className="showcase-img"
                         width={70}
@@ -927,7 +1019,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/jacket-5.jpg"
+                        src={jacket5}
                         alt="men yarn fleece full-zip jacket"
                         className="showcase-img"
                         width={70}
@@ -951,7 +1043,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/jacket-1.jpg"
+                        src={jacket1}
                         alt="mens winter leathers jackets"
                         className="showcase-img"
                         width={70}
@@ -975,7 +1067,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/jacket-3.jpg"
+                        src={jacket3}
                         alt="mens winter leathers jackets"
                         className="showcase-img"
                         width={70}
@@ -999,7 +1091,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/shorts-1.jpg"
+                        src={shorts1}
                         alt="better basics french terry sweatshorts"
                         className="showcase-img"
                         width={70}
@@ -1030,7 +1122,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/sports-1.jpg"
+                        src={sports1}
                         alt="running & trekking shoes - white"
                         className="showcase-img"
                         width={70}
@@ -1054,7 +1146,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/sports-2.jpg"
+                        src={sports2}
                         alt="trekking & running shoes - black"
                         className="showcase-img"
                         width={70}
@@ -1078,7 +1170,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/party-wear-1.jpg"
+                        src={partywear1}
                         alt="womens party wear shoes"
                         className="showcase-img"
                         width={70}
@@ -1102,7 +1194,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/sports-3.jpg"
+                        src={sports3}
                         alt="sports claw women's shoes"
                         className="showcase-img"
                         width={70}
@@ -1128,7 +1220,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/sports-6.jpg"
+                        src={sports6}
                         alt="air tekking shoes - white"
                         className="showcase-img"
                         width={70}
@@ -1152,7 +1244,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/shoe-3.jpg"
+                        src={shoe3}
                         alt="Boot With Suede Detail"
                         className="showcase-img"
                         width={70}
@@ -1176,7 +1268,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/shoe-1.jpg"
+                        src={shoe1}
                         alt="men's leather formal wear shoes"
                         className="showcase-img"
                         width={70}
@@ -1200,7 +1292,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/shoe-2.jpg"
+                        src={shoe2}
                         alt="casual men's brown shoes"
                         className="showcase-img"
                         width={70}
@@ -1231,7 +1323,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/watch-3.jpg"
+                        src={watch3}
                         alt="pocket watch leather pouch"
                         className="showcase-img"
                         width={70}
@@ -1255,7 +1347,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/jewellery-3.jpg"
+                        src={jewellery3}
                         alt="silver deer heart necklace"
                         className="showcase-img"
                         width={70}
@@ -1279,7 +1371,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/perfume.jpg"
+                        src={perfume}
                         alt="titan 100 ml womens perfume"
                         className="showcase-img"
                         width={70}
@@ -1303,7 +1395,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/belt.jpg"
+                        src={belt}
                         alt="men's leather reversible belt"
                         className="showcase-img"
                         width={70}
@@ -1329,7 +1421,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/jewellery-2.jpg"
+                        src={jewellery2}
                         alt="platinum zircon classic ring"
                         className="showcase-img"
                         width={70}
@@ -1353,7 +1445,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/watch-1.jpg"
+                        src={watch1}
                         alt="smart watche vital plus"
                         className="showcase-img"
                         width={70}
@@ -1377,7 +1469,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/shampoo.jpg"
+                        src={shampoo}
                         alt="shampoo conditioner packs"
                         className="showcase-img"
                         width={70}
@@ -1401,7 +1493,7 @@ const Home = () => {
                   <div className="showcase">
                     <a href="index.html#" className="showcase-img-box">
                       <img
-                        src="assets/images/products/jewellery-1.jpg"
+                        src={jewellery1}
                         alt="rose gold peacock earrings"
                         className="showcase-img"
                         width={70}
@@ -1436,7 +1528,7 @@ const Home = () => {
                 <div className="showcase">
                   <div className="showcase-banner">
                     <img
-                      src="assets/images/products/shampoo.jpg"
+                      src={shampoo}
                       alt="shampoo, conditioner & facewash packs"
                       className="showcase-img"
                     />
@@ -1502,7 +1594,7 @@ const Home = () => {
                 <div className="showcase">
                   <div className="showcase-banner">
                     <img
-                      src="assets/images/products/jewellery-1.jpg"
+                      src={jewellery1}
                       alt="Rose Gold diamonds Earring"
                       className="showcase-img"
                     />
@@ -1577,13 +1669,13 @@ const Home = () => {
               <div className="showcase">
                 <div className="showcase-banner">
                   <img
-                    src="assets/images/products/jacket-3.jpg"
+                    src={jacket3}
                     alt="Mens Winter Leathers Jackets"
                     width={300}
                     className="product-img default"
                   />
                   <img
-                    src="assets/images/products/jacket-4.jpg"
+                    src={jacket4}
                     alt="Mens Winter Leathers Jackets"
                     width={300}
                     className="product-img hover"
@@ -1629,13 +1721,13 @@ const Home = () => {
               <div className="showcase">
                 <div className="showcase-banner">
                   <img
-                    src="assets/images/products/shirt-1.jpg"
+                    src={shirt1}
                     alt="Pure Garment Dyed Cotton Shirt"
                     className="product-img default"
                     width={300}
                   />
                   <img
-                    src="assets/images/products/shirt-2.jpg"
+                    src={shirt2}
                     alt="Pure Garment Dyed Cotton Shirt"
                     className="product-img hover"
                     width={300}
@@ -1681,13 +1773,13 @@ const Home = () => {
               <div className="showcase">
                 <div className="showcase-banner">
                   <img
-                    src="assets/images/products/jacket-5.jpg"
+                    src={jacket5}
                     alt="MEN Yarn Fleece Full-Zip Jacket"
                     className="product-img default"
                     width={300}
                   />
                   <img
-                    src="assets/images/products/jacket-6.jpg"
+                    src={jacket6}
                     alt="MEN Yarn Fleece Full-Zip Jacket"
                     className="product-img hover"
                     width={300}
@@ -1732,13 +1824,13 @@ const Home = () => {
               <div className="showcase">
                 <div className="showcase-banner">
                   <img
-                    src="assets/images/products/clothes-3.jpg"
+                    src={clothes3}
                     alt="Black Floral Wrap Midi Skirt"
                     className="product-img default"
                     width={300}
                   />
                   <img
-                    src="assets/images/products/clothes-4.jpg"
+                    src={clothes4}
                     alt="Black Floral Wrap Midi Skirt"
                     className="product-img hover"
                     width={300}
@@ -1784,13 +1876,13 @@ const Home = () => {
               <div className="showcase">
                 <div className="showcase-banner">
                   <img
-                    src="assets/images/products/shoe-2.jpg"
+                    src={shoe2}
                     alt="Casual Men's Brown shoes"
                     className="product-img default"
                     width={300}
                   />
                   <img
-                    src="assets/images/products/shoe-2_1.jpg"
+                    src={shoe2_1}
                     alt="Casual Men's Brown shoes"
                     className="product-img hover"
                     width={300}
@@ -1835,13 +1927,13 @@ const Home = () => {
               <div className="showcase">
                 <div className="showcase-banner">
                   <img
-                    src="assets/images/products/watch-3.jpg"
+                    src={watch3}
                     alt="Pocket Watch Leather Pouch"
                     className="product-img default"
                     width={300}
                   />
                   <img
-                    src="assets/images/products/watch-4.jpg"
+                    src={watch4}
                     alt="Pocket Watch Leather Pouch"
                     className="product-img hover"
                     width={300}
@@ -1887,13 +1979,13 @@ const Home = () => {
               <div className="showcase">
                 <div className="showcase-banner">
                   <img
-                    src="assets/images/products/watch-1.jpg"
+                    src={watch1}
                     alt="Smart watche Vital Plus"
                     className="product-img default"
                     width={300}
                   />
                   <img
-                    src="assets/images/products/watch-2.jpg"
+                    src={watch2}
                     alt="Smart watche Vital Plus"
                     className="product-img hover"
                     width={300}
@@ -1938,13 +2030,13 @@ const Home = () => {
               <div className="showcase">
                 <div className="showcase-banner">
                   <img
-                    src="assets/images/products/party-wear-1.jpg"
+                    src={partywear1}
                     alt="Womens Party Wear Shoes"
                     className="product-img default"
                     width={300}
                   />
                   <img
-                    src="assets/images/products/party-wear-2.jpg"
+                    src={partywear2}
                     alt="Womens Party Wear Shoes"
                     className="product-img hover"
                     width={300}
@@ -1990,13 +2082,13 @@ const Home = () => {
               <div className="showcase">
                 <div className="showcase-banner">
                   <img
-                    src="assets/images/products/jacket-1.jpg"
+                    src={jacket1}
                     alt="Mens Winter Leathers Jackets"
                     className="product-img default"
                     width={300}
                   />
                   <img
-                    src="assets/images/products/jacket-2.jpg"
+                    src={jacket2}
                     alt="Mens Winter Leathers Jackets"
                     className="product-img hover"
                     width={300}
@@ -2041,13 +2133,13 @@ const Home = () => {
               <div className="showcase">
                 <div className="showcase-banner">
                   <img
-                    src="assets/images/products/sports-2.jpg"
+                    src={sports2}
                     alt="Trekking & Running Shoes - black"
                     className="product-img default"
                     width={300}
                   />
                   <img
-                    src="assets/images/products/sports-4.jpg"
+                    src={sports4}
                     alt="Trekking & Running Shoes - black"
                     className="product-img hover"
                     width={300}
@@ -2093,13 +2185,13 @@ const Home = () => {
               <div className="showcase">
                 <div className="showcase-banner">
                   <img
-                    src="assets/images/products/shoe-1.jpg"
+                    src={shoe1}
                     alt="Men's Leather Formal Wear shoes"
                     className="product-img default"
                     width={300}
                   />
                   <img
-                    src="assets/images/products/shoe-1_1.jpg"
+                    src={shoe1_1}
                     alt="Men's Leather Formal Wear shoes"
                     className="product-img hover"
                     width={300}
@@ -2144,13 +2236,13 @@ const Home = () => {
               <div className="showcase">
                 <div className="showcase-banner">
                   <img
-                    src="assets/images/products/shorts-1.jpg"
+                    src={shorts1}
                     alt="Better Basics French Terry Sweatshorts"
                     className="product-img default"
                     width={300}
                   />
                   <img
-                    src="assets/images/products/shorts-2.jpg"
+                    src={shorts2}
                     alt="Better Basics French Terry Sweatshorts"
                     className="product-img hover"
                     width={300}
@@ -2211,7 +2303,7 @@ const Home = () => {
             <h2 className="title">testimonial</h2>
             <div className="testimonial-card">
               <img
-                src="assets/images/testimonial-1.jpg"
+                src={testimonial1}
                 alt="alan doe"
                 className="testimonial-banner"
                 width={80}
@@ -2220,7 +2312,7 @@ const Home = () => {
               <p className="testimonial-name">Alan Doe</p>
               <p className="testimonial-title">CEO &amp; Founder Invision</p>
               <img
-                src="assets/images/icons/quotes.svg"
+                src={quotesicon}
                 alt="quotation"
                 className="quotation-img"
                 width={26}
@@ -2236,7 +2328,7 @@ const Home = () => {
     */}
           <div className="cta-container">
             <img
-              src="assets/images/cta-banner.jpg"
+              src={ctabanner}
               alt="summer collection"
               className="cta-banner"
             />
@@ -2312,7 +2404,7 @@ const Home = () => {
           <div className="blog-card">
             <a href="index.html#">
               <img
-                src="assets/images/blog-1.jpg"
+                src={blog1}
                 alt="Clothes Retail KPIs 2021 Guide for Clothes Executives"
                 width={300}
                 className="blog-banner"
@@ -2336,7 +2428,7 @@ const Home = () => {
           <div className="blog-card">
             <a href="index.html#">
               <img
-                src="assets/images/blog-2.jpg"
+                src={blog2}
                 alt="Curbside fashion Trends: How to Win the Pickup Battle."
                 className="blog-banner"
                 width={300}
@@ -2360,7 +2452,7 @@ const Home = () => {
           <div className="blog-card">
             <a href="index.html#">
               <img
-                src="assets/images/blog-3.jpg"
+                src={blog3}
                 alt="EBT vendors: Claim Your Share of SNAP Online Revenue."
                 className="blog-banner"
                 width={300}
@@ -2384,7 +2476,7 @@ const Home = () => {
           <div className="blog-card">
             <a href="index.html#">
               <img
-                src="assets/images/blog-4.jpg"
+                src={blog4}
                 alt="Curbside fashion Trends: How to Win the Pickup Battle."
                 className="blog-banner"
                 width={300}
@@ -2409,356 +2501,11 @@ const Home = () => {
       </div>
     </div>
   </main>
-  {/*
-    - FOOTER
-  */}
-  <footer>
-    <div className="footer-category">
-      <div className="container">
-        <h2 className="footer-category-title">Brand directory</h2>
-        <div className="footer-category-box">
-          <h3 className="category-box-title">Fashion :</h3>
-          <a href="index.html#" className="footer-category-link">
-            T-shirt
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            Shirts
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            shorts &amp; jeans
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            jacket
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            dress &amp; frock
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            innerwear
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            hosiery
-          </a>
-        </div>
-        <div className="footer-category-box">
-          <h3 className="category-box-title">footwear :</h3>
-          <a href="index.html#" className="footer-category-link">
-            sport
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            formal
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            Boots
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            casual
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            cowboy shoes
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            safety shoes
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            Party wear shoes
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            Branded
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            Firstcopy
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            Long shoes
-          </a>
-        </div>
-        <div className="footer-category-box">
-          <h3 className="category-box-title">jewellery :</h3>
-          <a href="index.html#" className="footer-category-link">
-            Necklace
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            Earrings
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            Couple rings
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            Pendants
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            Crystal
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            Bangles
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            bracelets
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            nosepin
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            chain
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            Earrings
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            Couple rings
-          </a>
-        </div>
-        <div className="footer-category-box">
-          <h3 className="category-box-title">cosmetics :</h3>
-          <a href="index.html#" className="footer-category-link">
-            Shampoo
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            Bodywash
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            Facewash
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            makeup kit
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            liner
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            lipstick
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            prefume
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            Body soap
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            scrub
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            hair gel
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            hair colors
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            hair dye
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            sunscreen
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            skin loson
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            liner
-          </a>
-          <a href="index.html#" className="footer-category-link">
-            lipstick
-          </a>
-        </div>
-      </div>
-    </div>
-    <div className="footer-nav">
-      <div className="container">
-        <ul className="footer-nav-list">
-          <li className="footer-nav-item">
-            <h2 className="nav-title">Popular Categories</h2>
-          </li>
-          <li className="footer-nav-item">
-            <a href="index.html#" className="footer-nav-link">
-              Fashion
-            </a>
-          </li>
-          <li className="footer-nav-item">
-            <a href="index.html#" className="footer-nav-link">
-              Electronic
-            </a>
-          </li>
-          <li className="footer-nav-item">
-            <a href="index.html#" className="footer-nav-link">
-              Cosmetic
-            </a>
-          </li>
-          <li className="footer-nav-item">
-            <a href="index.html#" className="footer-nav-link">
-              Health
-            </a>
-          </li>
-          <li className="footer-nav-item">
-            <a href="index.html#" className="footer-nav-link">
-              Watches
-            </a>
-          </li>
-        </ul>
-        <ul className="footer-nav-list">
-          <li className="footer-nav-item">
-            <h2 className="nav-title">Products</h2>
-          </li>
-          <li className="footer-nav-item">
-            <a href="index.html#" className="footer-nav-link">
-              Prices drop
-            </a>
-          </li>
-          <li className="footer-nav-item">
-            <a href="index.html#" className="footer-nav-link">
-              New products
-            </a>
-          </li>
-          <li className="footer-nav-item">
-            <a href="index.html#" className="footer-nav-link">
-              Best sales
-            </a>
-          </li>
-          <li className="footer-nav-item">
-            <a href="index.html#" className="footer-nav-link">
-              Contact us
-            </a>
-          </li>
-          <li className="footer-nav-item">
-            <a href="index.html#" className="footer-nav-link">
-              Sitemap
-            </a>
-          </li>
-        </ul>
-        <ul className="footer-nav-list">
-          <li className="footer-nav-item">
-            <h2 className="nav-title">Our Company</h2>
-          </li>
-          <li className="footer-nav-item">
-            <a href="index.html#" className="footer-nav-link">
-              Delivery
-            </a>
-          </li>
-          <li className="footer-nav-item">
-            <a href="index.html#" className="footer-nav-link">
-              Legal Notice
-            </a>
-          </li>
-          <li className="footer-nav-item">
-            <a href="index.html#" className="footer-nav-link">
-              Terms and conditions
-            </a>
-          </li>
-          <li className="footer-nav-item">
-            <a href="index.html#" className="footer-nav-link">
-              About us
-            </a>
-          </li>
-          <li className="footer-nav-item">
-            <a href="index.html#" className="footer-nav-link">
-              Secure payment
-            </a>
-          </li>
-        </ul>
-        <ul className="footer-nav-list">
-          <li className="footer-nav-item">
-            <h2 className="nav-title">Services</h2>
-          </li>
-          <li className="footer-nav-item">
-            <a href="index.html#" className="footer-nav-link">
-              Prices drop
-            </a>
-          </li>
-          <li className="footer-nav-item">
-            <a href="index.html#" className="footer-nav-link">
-              New products
-            </a>
-          </li>
-          <li className="footer-nav-item">
-            <a href="index.html#" className="footer-nav-link">
-              Best sales
-            </a>
-          </li>
-          <li className="footer-nav-item">
-            <a href="index.html#" className="footer-nav-link">
-              Contact us
-            </a>
-          </li>
-          <li className="footer-nav-item">
-            <a href="index.html#" className="footer-nav-link">
-              Sitemap
-            </a>
-          </li>
-        </ul>
-        <ul className="footer-nav-list">
-          <li className="footer-nav-item">
-            <h2 className="nav-title">Contact</h2>
-          </li>
-          <li className="footer-nav-item flex">
-            <div className="icon-box">
-              <ion-icon name="location-outline" />
-            </div>
-            <address className="content">
-              419 State 414 Rte Beaver Dams, New York(NY), 14812, USA
-            </address>
-          </li>
-          <li className="footer-nav-item flex">
-            <div className="icon-box">
-              <ion-icon name="call-outline" />
-            </div>
-            <a href="tel:+607936-8058" className="footer-nav-link">
-              (607) 936-8058
-            </a>
-          </li>
-          <li className="footer-nav-item flex">
-            <div className="icon-box">
-              <ion-icon name="mail-outline" />
-            </div>
-            <a href="mailto:example@gmail.com" className="footer-nav-link">
-              example@gmail.com
-            </a>
-          </li>
-        </ul>
-        <ul className="footer-nav-list">
-          <li className="footer-nav-item">
-            <h2 className="nav-title">Follow Us</h2>
-          </li>
-          <li>
-            <ul className="social-link">
-              <li className="footer-nav-item">
-                <a href="index.html#" className="footer-nav-link">
-                  <ion-icon name="logo-facebook" />
-                </a>
-              </li>
-              <li className="footer-nav-item">
-                <a href="index.html#" className="footer-nav-link">
-                  <ion-icon name="logo-twitter" />
-                </a>
-              </li>
-              <li className="footer-nav-item">
-                <a href="index.html#" className="footer-nav-link">
-                  <ion-icon name="logo-linkedin" />
-                </a>
-              </li>
-              <li className="footer-nav-item">
-                <a href="index.html#" className="footer-nav-link">
-                  <ion-icon name="logo-instagram" />
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div className="footer-bottom">
-      <div className="container">
-        <img
-          src="assets/images/payment.png"
-          alt="payment method"
-          className="payment-img"
-        />
-        <p className="copyright">
-          Copyright © <a href="index.html#">Anon</a> all rights reserved.
-        </p>
-      </div>
-    </div>
-  </footer>
+  
 </>
 
   );
 }
+
+
 export default Home;

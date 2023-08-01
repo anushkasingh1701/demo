@@ -88,7 +88,7 @@ img, ion-icon, button, a { display: block; }
 
 span { display: inline-block; }
 
-html {
+body {
   font-family: "Poppins", sans-serif;
   -ms-scroll-chaining: none;
       overscroll-behavior: contain;
@@ -1891,7 +1891,7 @@ Breadcrumb
 }
 
 .service-item {
-  min-width: 190px;
+  /* min-width: 196px;  */
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1996,6 +1996,67 @@ Breadcrumb
 .blog-meta cite {
   font-style: normal;
   color: var(--davys-gray);
+}
+
+
+
+/*-----------------------------------*\
+  #SINGLPRODUCT-PAGE
+\*-----------------------------------*/
+.singleprod .showcase-content{
+  border: 1px solid #D9D9D9;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+}
+
+.addcart-quanity {
+  display:flex;
+  gap: 2rem;
+}
+
+.quantity-button span{
+  border: 1px solid var(--cultured);
+  padding:0.5rem 1rem;
+}
+
+@media only screen and (max-width:426px){
+  .quantity-button span{
+    padding:0.5rem;
+  }
+
+  .spsociallinks .header-social-container{
+    display:flex;
+    gap:0.5rem;
+  }
+  .spsociallinks .header-social-container li a{
+    padding: 5px;
+    background: hsl(0, 0%, 95%);
+    -webkit-border-radius: var(--border-radius-sm);
+            border-radius: var(--border-radius-sm);
+    color: var(--sonic-silver);
+    -webkit-transition: var(--transition-timing);
+    -o-transition: var(--transition-timing);
+    transition: var(--transition-timing);
+  }
+  .spsociallinks .header-social-container li a:hover {
+    background: var(--salmon-pink);
+    color: var(--white);
+  }
+  
+}
+
+.quantity-button .signs{
+    color:var(--salmon-pink);
+}
+
+.sub-descript{
+  font-size: 0.75rem;
+}
+.spsociallinks .header-social-container li p{
+  font-size: 0.75rem;
+}
+.spsociallinks .header-social-container li a{
+  margin-left: 0.5rem;
 }
 
 
@@ -2805,7 +2866,7 @@ footer {
 
   .desktop-menu-category-list .menu-category > .menu-title:hover::after { -webkit-transform: scaleX(1); -ms-transform: scaleX(1); transform: scaleX(1); }
 
-  .dropdown-panel {
+  .dropdown-panel{
     position: absolute;
     top: 100%;
     left: 0;
