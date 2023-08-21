@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useContext } from 'react'
 
 import "./components/Accordian"
 import "./components/Mobilemenu"
@@ -76,6 +76,10 @@ import blog2 from './assets/images/blog-2.jpg'
 import blog3 from './assets/images/blog-3.jpg'
 import blog4 from './assets/images/blog-4.jpg'
 
+
+//context
+import { Context } from './utils/context'
+
 // //newsletter
 import { useState } from 'react'
 import Newsletter from './components/Newsletter'
@@ -83,9 +87,34 @@ import Newsletter from './components/Newsletter'
 //notification
 import Notification from './components/Notification'
 
+import { fetchDataFromApi } from './utils/api'
 
 
 const Home = () => {
+
+  const {categories, setCategories, products, setProducts} = useContext(Context);
+
+  useEffect(() => {
+    getProducts();
+    getCategories();
+  }, [])
+
+  const getProducts = () =>{
+    fetchDataFromApi("/api/products  ?populate=*").then((res)=> 
+    {
+      console.log(res);
+      setProducts(res);
+    });
+  }
+
+  const getCategories = () =>{
+    fetchDataFromApi("/api/categoires?populate=*").then((res)=> 
+    {
+      console.log(res);
+      setCategories(res);
+    });
+  }
+
   const[modalOpen, setmodal ] = useState(true);
   const[notificationOpen, setnotification] = useState(true);
   
@@ -938,7 +967,7 @@ const Home = () => {
                       </a>
                       <div className="price-box">
                         <p className="price">$45.00</p>
-                        <del>$12.00</del>
+                        <del>$50.00</del>
                       </div>
                     </div>
                   </div>
@@ -962,7 +991,7 @@ const Home = () => {
                       </a>
                       <div className="price-box">
                         <p className="price">$61.00</p>
-                        <del>$9.00</del>
+                        <del>$90.00</del>
                       </div>
                     </div>
                   </div>
@@ -986,7 +1015,7 @@ const Home = () => {
                       </a>
                       <div className="price-box">
                         <p className="price">$76.00</p>
-                        <del>$25.00</del>
+                        <del>$85.00</del>
                       </div>
                     </div>
                   </div>
@@ -1009,8 +1038,8 @@ const Home = () => {
                         Mens Fashion
                       </a>
                       <div className="price-box">
-                        <p className="price">$68.00</p>
-                        <del>$31.00</del>
+                        <p className="price">$31.00</p>
+                        <del>$68.00</del>
                       </div>
                     </div>
                   </div>
@@ -1035,8 +1064,8 @@ const Home = () => {
                         Winter wear
                       </a>
                       <div className="price-box">
-                        <p className="price">$61.00</p>
-                        <del>$11.00</del>
+                        <p className="price">$11.00</p>
+                        <del>$61.00</del>
                       </div>
                     </div>
                   </div>
@@ -1059,8 +1088,8 @@ const Home = () => {
                         Winter wear
                       </a>
                       <div className="price-box">
-                        <p className="price">$32.00</p>
-                        <del>$20.00</del>
+                        <p className="price">$20.00</p>
+                        <del>$32.00</del>
                       </div>
                     </div>
                   </div>
@@ -1083,8 +1112,8 @@ const Home = () => {
                         Jackets
                       </a>
                       <div className="price-box">
-                        <p className="price">$50.00</p>
-                        <del>$25.00</del>
+                        <p className="price">$25.00</p>
+                        <del>$50.00</del>
                       </div>
                     </div>
                   </div>
@@ -1107,8 +1136,8 @@ const Home = () => {
                         Shorts
                       </a>
                       <div className="price-box">
-                        <p className="price">$20.00</p>
-                        <del>$10.00</del>
+                        <p className="price">$10.00</p>
+                        <del>$20.00</del>
                       </div>
                     </div>
                   </div>
@@ -1138,8 +1167,8 @@ const Home = () => {
                         Sports
                       </a>
                       <div className="price-box">
-                        <p className="price">$49.00</p>
-                        <del>$15.00</del>
+                        <p className="price">$15.00</p>
+                        <del>$49.00</del>
                       </div>
                     </div>
                   </div>
@@ -1162,8 +1191,8 @@ const Home = () => {
                         Sports
                       </a>
                       <div className="price-box">
-                        <p className="price">$78.00</p>
-                        <del>$36.00</del>
+                        <p className="price">$36.00</p>
+                        <del>$78.00</del>
                       </div>
                     </div>
                   </div>
@@ -1186,8 +1215,8 @@ const Home = () => {
                         Party wear
                       </a>
                       <div className="price-box">
-                        <p className="price">$94.00</p>
-                        <del>$42.00</del>
+                        <p className="price">$42.00</p>
+                        <del>$94.00</del>
                       </div>
                     </div>
                   </div>
@@ -1339,8 +1368,8 @@ const Home = () => {
                         Watches
                       </a>
                       <div className="price-box">
-                        <p className="price">$50.00</p>
-                        <del>$34.00</del>
+                        <p className="price">$34.00</p>
+                        <del>$50.00</del>
                       </div>
                     </div>
                   </div>
@@ -1363,8 +1392,8 @@ const Home = () => {
                         Jewellery
                       </a>
                       <div className="price-box">
-                        <p className="price">$84.00</p>
-                        <del>$30.00</del>
+                        <p className="price">$30.00</p>
+                        <del>$84.00</del>
                       </div>
                     </div>
                   </div>
@@ -1387,8 +1416,8 @@ const Home = () => {
                         Perfume
                       </a>
                       <div className="price-box">
-                        <p className="price">$42.00</p>
-                        <del>$10.00</del>
+                        <p className="price">$10.00</p>
+                        <del>$42.00</del>
                       </div>
                     </div>
                   </div>
@@ -1411,8 +1440,8 @@ const Home = () => {
                         Belt
                       </a>
                       <div className="price-box">
-                        <p className="price">$24.00</p>
-                        <del>$10.00</del>
+                        <p className="price">$10.00</p>
+                        <del>$24.00</del>
                       </div>
                     </div>
                   </div>

@@ -12,6 +12,7 @@ import headphonebanner from "../assets/images/electronics-banner-1.jpg";
 import mensbanner from "../assets/images/mens-banner.jpg";
 import womensbanner from "../assets/images/womens-banner.jpg";
 import mousebanner from "../assets/images/electronics-banner-2.jpg";
+import Category from "../Category";
 
 const Header = () => {
   const [showCart, setShowCart] = useState(false);
@@ -198,7 +199,7 @@ const Header = () => {
                   </ul>
                   <ul className="dropdown-panel-list">
                     <li className="menu-title">
-                      <a href="index.html#">Women's</a>
+                      <a href="index.html#" onClick={<Category/>}>Women's</a>
                     </li>
                     <li className="panel-list-item">
                       <a href="index.html#">Formal</a>

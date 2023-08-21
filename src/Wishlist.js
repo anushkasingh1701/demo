@@ -6,8 +6,9 @@ import "./css/WishList.css"
 
 const Wishlist = () => {
   const [wishOpen, setWish] = useState(true);
+
   return (
-    
+     
     <div className="wishpage">
       
       <div className="wlheading">
