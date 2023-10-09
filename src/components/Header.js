@@ -17,6 +17,17 @@ import Category from "../Category";
 const Header = () => {
   const [showCart, setShowCart] = useState(false);
   const [input, setInput] = useState("");
+  const navigate = useNavigate();
+  
+  const gotoWishlist = () => {
+    navigate("/Wishlist")
+  }
+  const gotoCart = () => {
+    navigate("/Cart")
+  }
+  const gotoCategory = () =>{
+    navigate("/Category")
+  }
 
   const fetchData = (value) => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -113,11 +124,11 @@ const Header = () => {
               <button className="action-btn">
                 <ion-icon name="person-outline" />
               </button>
-              <button className="action-btn">
+              <button className="action-btn" onClick={()=> gotoWishlist()}>
                 <ion-icon name="heart-outline" />
                 <span className="count">0</span>
               </button>
-              <button className="action-btn" onClick={() => setShowCart(false)}>
+              <button className="action-btn" onClick={()=> gotoCart()}>
                 <ion-icon name="bag-handle-outline" />
                 <span className="count">0</span>
               </button>
@@ -128,7 +139,7 @@ const Header = () => {
           <div className="container">
             <ul className="desktop-menu-category-list">
               <li className="menu-category">
-                <a href="index.html#" className="menu-title">
+                <a href="/" className="menu-title">
                   Home
                 </a>
               </li>
@@ -139,25 +150,25 @@ const Header = () => {
                 <div className="dropdown-panel">
                   <ul className="dropdown-panel-list">
                     <li className="menu-title">
-                      <a href="index.html#">Electronics</a>
+                      <a href="/Category">Electronics</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">Desktop</a>
+                      <a href="/Category">Desktop</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">Laptop</a>
+                      <a href="/Category">Laptop</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">Camera</a>
+                      <a href="/Category">Camera</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">Tablet</a>
+                      <a href="/Category">Tablet</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">Headphone</a>
+                      <a href="/Category">Headphone</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">
+                      <a href="/Category">
                         <img
                           src={headphonebanner}
                           alt="headphone collection"
@@ -169,25 +180,25 @@ const Header = () => {
                   </ul>
                   <ul className="dropdown-panel-list">
                     <li className="menu-title">
-                      <a href="index.html#">Men's</a>
+                      <a href="/Category">Men's</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">Formal</a>
+                      <a href="/Category">Formal</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">Casual</a>
+                      <a href="/Category">Casual</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">Sports</a>
+                      <a href="/Category">Sports</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">Jacket</a>
+                      <a href="/Category">Jacket</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">Sunglasses</a>
+                      <a href="/Category">Sunglasses</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">
+                      <a href="/Category">
                         <img
                           src={mensbanner}
                           alt="men's fashion"
@@ -199,25 +210,25 @@ const Header = () => {
                   </ul>
                   <ul className="dropdown-panel-list">
                     <li className="menu-title">
-                      <a href="index.html#" onClick={<Category/>}>Women's</a>
+                      <a href="/Category">Women's</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">Formal</a>
+                      <a href="/Category">Formal</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="categories.html">Casual</a>
+                      <a href="/Category">Casual</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">Perfume</a>
+                      <a href="/Category">Perfume</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">Cosmetics</a>
+                      <a href="/Category">Cosmetics</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">Bags</a>
+                      <a href="/Category">Bags</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">
+                      <a href="/Category">
                         <img
                           src={womensbanner}
                           alt="women's fashion"
@@ -229,25 +240,25 @@ const Header = () => {
                   </ul>
                   <ul className="dropdown-panel-list">
                     <li className="menu-title">
-                      <a href="index.html#">Electronics</a>
+                      <a href="/Category">Electronics</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">Smart Watch</a>
+                      <a href="/Category">Smart Watch</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">Smart TV</a>
+                      <a href="/Category">Smart TV</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">Keyboard</a>
+                      <a href="/Category">Keyboard</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">Mouse</a>
+                      <a href="/Category">Mouse</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">Microphone</a>
+                      <a href="/Category">Microphone</a>
                     </li>
                     <li className="panel-list-item">
-                      <a href="index.html#">
+                      <a href="/Category">
                         <img
                           src={mousebanner}
                           alt="mouse collection"
@@ -260,75 +271,75 @@ const Header = () => {
                 </div>
               </li>
               <li className="menu-category">
-                <a href="index.html#" className="menu-title">
+                <a href="/Category" className="menu-title">
                   Men's
                 </a>
                 <ul className="dropdown-list">
                   <li className="dropdown-item">
-                    <a href="index.html#">Shirt</a>
+                    <a href="/Category">Shirt</a>
                   </li>
                   <li className="dropdown-item">
-                    <a href="index.html#">Shorts &amp; Jeans</a>
+                    <a href="/Category">Shorts &amp; Jeans</a>
                   </li>
                   <li className="dropdown-item">
-                    <a href="index.html#">Safety Shoes</a>
+                    <a href="/Category">Safety Shoes</a>
                   </li>
                   <li className="dropdown-item">
-                    <a href="index.html#">Wallet</a>
+                    <a href="/Category">Wallet</a>
                   </li>
                 </ul>
               </li>
               <li className="menu-category">
-                <a href="index.html#" className="menu-title">
+                <a href="/Category" className="menu-title">
                   Women's
                 </a>
                 <ul className="dropdown-list">
                   <li className="dropdown-item">
-                    <a href="index.html#">Dress &amp; Frock</a>
+                    <a href="/Category">Dress &amp; Frock</a>
                   </li>
                   <li className="dropdown-item">
-                    <a href="index.html#">Earrings</a>
+                    <a href="/Category">Earrings</a>
                   </li>
                   <li className="dropdown-item">
-                    <a href="index.html#">Necklace</a>
+                    <a href="/Category">Necklace</a>
                   </li>
                   <li className="dropdown-item">
-                    <a href="index.html#">Makeup Kit</a>
+                    <a href="/Category">Makeup Kit</a>
                   </li>
                 </ul>
               </li>
               <li className="menu-category">
-                <a href="index.html#" className="menu-title">
+                <a href="/Category" className="menu-title">
                   Jewelry
                 </a>
                 <ul className="dropdown-list">
                   <li className="dropdown-item">
-                    <a href="index.html#">Earrings</a>
+                    <a href="/Category">Earrings</a>
                   </li>
                   <li className="dropdown-item">
-                    <a href="index.html#">Couple Rings</a>
+                    <a href="/Category">Couple Rings</a>
                   </li>
                   <li className="dropdown-item">
-                    <a href="index.html#">Necklace</a>
+                    <a href="/Category">Necklace</a>
                   </li>
                   <li className="dropdown-item">
-                    <a href="index.html#">Bracelets</a>
+                    <a href="/Category">Bracelets</a>
                   </li>
                 </ul>
               </li>
               <li className="menu-category">
-                <a href="index.html#" className="menu-title">
+                <a href="/Category" className="menu-title">
                   Perfume
                 </a>
                 <ul className="dropdown-list">
                   <li className="dropdown-item">
-                    <a href="index.html#">Clothes Perfume</a>
+                    <a href="/Category">Clothes Perfume</a>
                   </li>
                   <li className="dropdown-item">
-                    <a href="index.html#">Deodorant</a>
+                    <a href="/Category">Deodorant</a>
                   </li>
                   <li className="dropdown-item">
-                    <a href="index.html#">Flower Fragrance</a>
+                    <a href="/Category">Flower Fragrance</a>
                   </li>
                   <li className="dropdown-item">
                     <a href="index.html#">Air Freshener</a>
@@ -355,7 +366,7 @@ const Header = () => {
           <button className="action-btn">
             <ion-icon
               name="bag-handle-outline"
-              onClick={() => setShowCart(false)}
+              onClick={()=> gotoCart()}
             />
             <span className="count">0</span>
           </button>

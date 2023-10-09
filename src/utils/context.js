@@ -12,7 +12,6 @@ const AppContext = ({children}) => {
         setCategories,
         products,
         setProducts,
-   
     }
 
     }>{children}</Context.Provider>

@@ -1,4 +1,5 @@
 import React, { useEffect, useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import "./components/Accordian"
 import "./components/Mobilemenu"
@@ -92,27 +93,31 @@ import { fetchDataFromApi } from './utils/api'
 
 const Home = () => {
 
-  const {categories, setCategories, products, setProducts} = useContext(Context);
+  const {categories, setCategories} = useContext(Context);
+  const navigate = useNavigate();
+
+  const gottoProduct = () => {
+    navigate("/Singleproduct")
+  }
 
   useEffect(() => {
     getProducts();
     getCategories();
   }, [])
 
-  const getProducts = () =>{
-    fetchDataFromApi("/api/products  ?populate=*").then((res)=> 
-    {
-      console.log(res);
-      setProducts(res);
-    });
-  }
-
-  const getCategories = () =>{
-    fetchDataFromApi("/api/categoires?populate=*").then((res)=> 
+  const getCategories = () => {
+    fetchDataFromApi("/api/category?populate=*").then((res) => 
     {
       console.log(res);
       setCategories(res);
-    });
+    }
+    
+    );
+
+  }
+
+  const getProducts = () => {
+    fetchDataFromApi("/api/products?populate=*").then((res) => console.log(res));
   }
 
   const[modalOpen, setmodal ] = useState(true);
@@ -827,7 +832,7 @@ const Home = () => {
             <div className="showcase-wrapper">
               <div className="showcase-container">
                 <div className="showcase">
-                  <a href="index.html#" className="showcase-img-box">
+                  <a onClick={()=> gottoProduct()} className="showcase-img-box">
                     <img
                       src={one}
                       alt="baby fabric shoes"
@@ -837,7 +842,7 @@ const Home = () => {
                     />
                   </a>
                   <div className="showcase-content">
-                    <a href="index.html#">
+                    <a onClick={()=> gottoProduct()}>
                       <h4 className="showcase-title">baby fabric shoes</h4>
                     </a>
                     <div className="showcase-rating">
@@ -854,7 +859,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="showcase">
-                  <a href="index.html#" className="showcase-img-box">
+                  <a onClick={()=> gottoProduct()} className="showcase-img-box">
                     <img
                       src={two}
                       alt="men's hoodies t-shirt"
@@ -864,7 +869,7 @@ const Home = () => {
                     />
                   </a>
                   <div className="showcase-content">
-                    <a href="index.html#">
+                    <a onClick={()=> gottoProduct()}>
                       <h4 className="showcase-title">men's hoodies t-shirt</h4>
                     </a>
                     <div className="showcase-rating">
@@ -881,7 +886,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="showcase">
-                  <a href="index.html#" className="showcase-img-box">
+                  <a href="/Singleproduct" className="showcase-img-box">
                     <img
                       src={three}
                       alt="girls t-shirt"
@@ -891,7 +896,7 @@ const Home = () => {
                     />
                   </a>
                   <div className="showcase-content">
-                    <a href="index.html#">
+                    <a href="/Singleproduct">
                       <h4 className="showcase-title">girls t-shirt</h4>
                     </a>
                     <div className="showcase-rating">
@@ -908,7 +913,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="showcase">
-                  <a href="index.html#" className="showcase-img-box">
+                  <a href="/Singleproduct" className="showcase-img-box">
                     <img
                       src={four}
                       alt="woolen hat for men"
@@ -918,7 +923,7 @@ const Home = () => {
                     />
                   </a>
                   <div className="showcase-content">
-                    <a href="index.html#">
+                    <a href="/Singleproduct">
                       <h4 className="showcase-title">woolen hat for men</h4>
                     </a>
                     <div className="showcase-rating">
@@ -948,7 +953,7 @@ const Home = () => {
               <div className="showcase-wrapper has-scrollbar">
                 <div className="showcase-container">
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={clothes1}
                         alt="relaxed short full sleeve t-shirt"
@@ -957,12 +962,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Relaxed Short full Sleeve T-Shirt
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         Clothes
                       </a>
                       <div className="price-box">
@@ -972,7 +977,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={clothes2}
                         alt="girls pink embro design top"
@@ -981,7 +986,7 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Girls pnk Embro design Top
                         </h4>
@@ -996,7 +1001,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={clothes3}
                         alt="black floral wrap midi skirt"
@@ -1005,12 +1010,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Black Floral Wrap Midi Skirt
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         Clothes
                       </a>
                       <div className="price-box">
@@ -1020,7 +1025,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={shirt1}
                         alt="pure garment dyed cotton shirt"
@@ -1029,12 +1034,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Pure Garment Dyed Cotton Shirt
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         Mens Fashion
                       </a>
                       <div className="price-box">
@@ -1046,7 +1051,7 @@ const Home = () => {
                 </div>
                 <div className="showcase-container">
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={jacket5}
                         alt="men yarn fleece full-zip jacket"
@@ -1055,12 +1060,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           MEN Yarn Fleece Full-Zip Jacket
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         Winter wear
                       </a>
                       <div className="price-box">
@@ -1070,7 +1075,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={jacket1}
                         alt="mens winter leathers jackets"
@@ -1079,12 +1084,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Mens Winter Leathers Jackets
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         Winter wear
                       </a>
                       <div className="price-box">
@@ -1094,7 +1099,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={jacket3}
                         alt="mens winter leathers jackets"
@@ -1103,12 +1108,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Mens Winter Leathers Jackets
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         Jackets
                       </a>
                       <div className="price-box">
@@ -1118,7 +1123,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={shorts1}
                         alt="better basics french terry sweatshorts"
@@ -1127,12 +1132,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Better Basics French Terry Sweatshorts
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         Shorts
                       </a>
                       <div className="price-box">
@@ -1149,7 +1154,7 @@ const Home = () => {
               <div className="showcase-wrapper  has-scrollbar">
                 <div className="showcase-container">
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={sports1}
                         alt="running & trekking shoes - white"
@@ -1158,12 +1163,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Running &amp; Trekking Shoes - White
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         Sports
                       </a>
                       <div className="price-box">
@@ -1173,7 +1178,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={sports2}
                         alt="trekking & running shoes - black"
@@ -1182,12 +1187,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Trekking &amp; Running Shoes - black
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         Sports
                       </a>
                       <div className="price-box">
@@ -1197,7 +1202,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={partywear1}
                         alt="womens party wear shoes"
@@ -1206,12 +1211,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Womens Party Wear Shoes
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         Party wear
                       </a>
                       <div className="price-box">
@@ -1221,7 +1226,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={sports3}
                         alt="sports claw women's shoes"
@@ -1230,12 +1235,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Sports Claw Women's Shoes
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         Sports
                       </a>
                       <div className="price-box">
@@ -1247,7 +1252,7 @@ const Home = () => {
                 </div>
                 <div className="showcase-container">
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={sports6}
                         alt="air tekking shoes - white"
@@ -1256,12 +1261,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Air Trekking Shoes - white
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         Sports
                       </a>
                       <div className="price-box">
@@ -1271,7 +1276,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={shoe3}
                         alt="Boot With Suede Detail"
@@ -1280,12 +1285,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Boot With Suede Detail
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         boots
                       </a>
                       <div className="price-box">
@@ -1295,7 +1300,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={shoe1}
                         alt="men's leather formal wear shoes"
@@ -1304,12 +1309,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Men's Leather Formal Wear shoes
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         formal
                       </a>
                       <div className="price-box">
@@ -1319,7 +1324,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={shoe2}
                         alt="casual men's brown shoes"
@@ -1328,12 +1333,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Casual Men's Brown shoes
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         Casual
                       </a>
                       <div className="price-box">
@@ -1350,7 +1355,7 @@ const Home = () => {
               <div className="showcase-wrapper  has-scrollbar">
                 <div className="showcase-container">
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={watch3}
                         alt="pocket watch leather pouch"
@@ -1359,12 +1364,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Pocket Watch Leather Pouch
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         Watches
                       </a>
                       <div className="price-box">
@@ -1374,7 +1379,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={jewellery3}
                         alt="silver deer heart necklace"
@@ -1383,12 +1388,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Silver Deer Heart Necklace
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         Jewellery
                       </a>
                       <div className="price-box">
@@ -1398,7 +1403,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={perfume}
                         alt="titan 100 ml womens perfume"
@@ -1407,12 +1412,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Titan 100 Ml Womens Perfume
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         Perfume
                       </a>
                       <div className="price-box">
@@ -1422,7 +1427,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={belt}
                         alt="men's leather reversible belt"
@@ -1431,12 +1436,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Men's Leather Reversible Belt
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         Belt
                       </a>
                       <div className="price-box">
@@ -1448,7 +1453,7 @@ const Home = () => {
                 </div>
                 <div className="showcase-container">
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={jewellery2}
                         alt="platinum zircon classic ring"
@@ -1457,12 +1462,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           platinum Zircon Classic Ring
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         jewellery
                       </a>
                       <div className="price-box">
@@ -1472,7 +1477,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={watch1}
                         alt="smart watche vital plus"
@@ -1481,12 +1486,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Smart watche Vital Plus
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         Watches
                       </a>
                       <div className="price-box">
@@ -1496,7 +1501,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={shampoo}
                         alt="shampoo conditioner packs"
@@ -1505,12 +1510,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           shampoo conditioner packs
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         cosmetics
                       </a>
                       <div className="price-box">
@@ -1520,7 +1525,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="showcase">
-                    <a href="index.html#" className="showcase-img-box">
+                    <a href="/Singleproduct" className="showcase-img-box">
                       <img
                         src={jewellery1}
                         alt="rose gold peacock earrings"
@@ -1529,12 +1534,12 @@ const Home = () => {
                       />
                     </a>
                     <div className="showcase-content">
-                      <a href="index.html#">
+                      <a href="/Singleproduct">
                         <h4 className="showcase-title">
                           Rose Gold Peacock Earrings
                         </h4>
                       </a>
-                      <a href="index.html#" className="showcase-category">
+                      <a href="/Singleproduct" className="showcase-category">
                         jewellery
                       </a>
                       <div className="price-box">
@@ -1570,7 +1575,7 @@ const Home = () => {
                       <ion-icon name="star-outline" />
                       <ion-icon name="star-outline" />
                     </div>
-                    <a href="index.html#">
+                    <a onClick={()=> gottoProduct()}>
                       <h3 className="showcase-title">
                         shampoo, conditioner &amp; facewash packs
                       </h3>
@@ -1637,7 +1642,7 @@ const Home = () => {
                       <ion-icon name="star-outline" />
                     </div>
                     <h3 className="showcase-title">
-                      <a href="index.html#" className="showcase-title">
+                      <a href="/Singleproduct" className="showcase-title">
                         Rose Gold diamonds Earring
                       </a>
                     </h3>
@@ -1726,10 +1731,10 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="showcase-content">
-                  <a href="index.html#" className="showcase-category">
+                  <a href="/Singleproduct" className="showcase-category">
                     jacket
                   </a>
-                  <a href="index.html#">
+                  <a href="/Singleproduct">
                     <h3 className="showcase-title">
                       Mens Winter Leathers Jackets
                     </h3>
@@ -1778,11 +1783,11 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="showcase-content">
-                  <a href="index.html#" className="showcase-category">
+                  <a href="/Singleproduct" className="showcase-category">
                     shirt
                   </a>
                   <h3>
-                    <a href="index.html#" className="showcase-title">
+                    <a href="/Singleproduct" className="showcase-title">
                       Pure Garment Dyed Cotton Shirt
                     </a>
                   </h3>
@@ -1829,11 +1834,11 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="showcase-content">
-                  <a href="index.html#" className="showcase-category">
+                  <a href="/Singleproduct" className="showcase-category">
                     Jacket
                   </a>
                   <h3>
-                    <a href="index.html#" className="showcase-title">
+                    <a href="/Singleproduct" className="showcase-title">
                       MEN Yarn Fleece Full-Zip Jacket
                     </a>
                   </h3>
@@ -1881,11 +1886,11 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="showcase-content">
-                  <a href="index.html#" className="showcase-category">
+                  <a href="/Singleproduct" className="showcase-category">
                     skirt
                   </a>
                   <h3>
-                    <a href="index.html#" className="showcase-title">
+                    <a href="/Singleproduct" className="showcase-title">
                       Black Floral Wrap Midi Skirt
                     </a>
                   </h3>
@@ -1932,11 +1937,11 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="showcase-content">
-                  <a href="index.html#" className="showcase-category">
+                  <a href="/Singleproduct" className="showcase-category">
                     casual
                   </a>
                   <h3>
-                    <a href="index.html#" className="showcase-title">
+                    <a href="/Singleproduct" className="showcase-title">
                       Casual Men's Brown shoes
                     </a>
                   </h3>
@@ -1984,11 +1989,11 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="showcase-content">
-                  <a href="index.html#" className="showcase-category">
+                  <a href="/Singleproduct" className="showcase-category">
                     watches
                   </a>
                   <h3>
-                    <a href="index.html#" className="showcase-title">
+                    <a href="/Singleproduct" className="showcase-title">
                       Pocket Watch Leather Pouch
                     </a>
                   </h3>
@@ -2035,11 +2040,11 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="showcase-content">
-                  <a href="index.html#" className="showcase-category">
+                  <a href="/Singleproduct" className="showcase-category">
                     watches
                   </a>
                   <h3>
-                    <a href="index.html#" className="showcase-title">
+                    <a href="/Singleproduct" className="showcase-title">
                       Smart watche Vital Plus
                     </a>
                   </h3>
@@ -2087,11 +2092,11 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="showcase-content">
-                  <a href="index.html#" className="showcase-category">
+                  <a href="/Singleproduct" className="showcase-category">
                     party wear
                   </a>
                   <h3>
-                    <a href="index.html#" className="showcase-title">
+                    <a href="/Singleproduct" className="showcase-title">
                       Womens Party Wear Shoes
                     </a>
                   </h3>
@@ -2138,11 +2143,11 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="showcase-content">
-                  <a href="index.html#" className="showcase-category">
+                  <a href="/Singleproduct" className="showcase-category">
                     jacket
                   </a>
                   <h3>
-                    <a href="index.html#" className="showcase-title">
+                    <a href="/Singleproduct" className="showcase-title">
                       Mens Winter Leathers Jackets
                     </a>
                   </h3>
@@ -2190,11 +2195,11 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="showcase-content">
-                  <a href="index.html#" className="showcase-category">
+                  <a href="/Singleproduct" className="showcase-category">
                     sports
                   </a>
                   <h3>
-                    <a href="index.html#" className="showcase-title">
+                    <a href="/Singleproduct" className="showcase-title">
                       Trekking &amp; Running Shoes - black
                     </a>
                   </h3>
@@ -2241,11 +2246,11 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="showcase-content">
-                  <a href="index.html#" className="showcase-category">
+                  <a href="/Singleproduct" className="showcase-category">
                     formal
                   </a>
                   <h3>
-                    <a href="index.html#" className="showcase-title">
+                    <a href="/Singleproduct" className="showcase-title">
                       Men's Leather Formal Wear shoes
                     </a>
                   </h3>
@@ -2293,11 +2298,11 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="showcase-content">
-                  <a href="index.html#" className="showcase-category">
+                  <a href="/Singleproduct" className="showcase-category">
                     shorts
                   </a>
                   <h3>
-                    <a href="index.html#" className="showcase-title">
+                    <a href="/Singleproduct" className="showcase-title">
                       Better Basics French Terry Sweatshorts
                     </a>
                   </h3>
