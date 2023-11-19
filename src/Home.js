@@ -127,7 +127,7 @@ const Home = ({id, data}) => {
       setProducts(res);
     });
   }
-
+  //modal functions
   const[modalOpen, setmodal ] = useState(true);
   const[notificationOpen, setnotification] = useState(true);
   

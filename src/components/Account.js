@@ -39,7 +39,7 @@ const Account = () => {
           </ul>
         </div>
       </div>
-    )
+      )
 }
 
 export default Account;

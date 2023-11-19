@@ -5,6 +5,7 @@ import shorts2 from ".././assets/images/products/shorts-2.jpg";
 
 const Saleproduct = () => {
     return(
+      
         <div className="showcase">
                 <div className="showcase-banner">
                   <img

@@ -7,6 +7,7 @@ import Sidebar from "./components/Sidebar";
 
 const Orders = () => {
     return (
+      // orders page
         <div className="cart-panel">
         <Title/>
         <div className="user-wrapper">

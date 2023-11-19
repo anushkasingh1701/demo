@@ -5,6 +5,7 @@ import Title from "./components/Title";
 import Account from "./components/Account";
 const Userpage = () => {
   return (
+    // user page 
     <>
       <div className="cart-panel">
         <Title/>

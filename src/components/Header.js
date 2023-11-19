@@ -25,6 +25,7 @@ const Header = ({categories}) => {
   const gotoCart = () => {
     navigate("/Cart")
   }
+  //userpage navigation
   const gotoUser = () => {
     navigate("/Userpage")
   }

@@ -19,7 +19,7 @@ const BreadCrumb = () => {
                   <li>
                     <a href="#">RELAXED.....</a>
                   </li>
-                </ul>
+               </ul> 
     )
 }
 export default BreadCrumb;

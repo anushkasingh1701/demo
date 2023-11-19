@@ -9,6 +9,7 @@ const Showcase2 = ({products, data}) => {
   const navigate = useNavigate();
     return(
         <>
+        
         {products?.data?.map((item) => (
           
           <div className="showcase" key={item.id}
