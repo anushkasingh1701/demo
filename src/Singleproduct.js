@@ -2,8 +2,11 @@ import React from 'react'
 import clothes1 from './assets/images/products/clothes-1.jpg'
 import Relatedproducts from './Relatedproducts';
 import "./css/Singleproduct.css";
+import BreadCrumb from './components/BreadCrumb';
+import { useParams } from 'react-router-dom';
 
-const Singleproduct = () => {
+const Singleproduct = (products) => {
+  
   return (
     <>
       <div className="singleprod">
@@ -18,25 +21,7 @@ const Singleproduct = () => {
                 />
               </div>
               <div className="showcase-content">
-                <ul className="collapsed">
-                  <li>
-                    <a href="#">Home</a>
-                  </li>
-                  {/*
-                   */}
-                  <li>
-                    <a href="#">Categories</a>
-                  </li>
-                  <li>
-                    <a href="#">Womens</a>
-                  </li>
-                  <li>
-                    <a href="#">Casuals</a>
-                  </li>
-                  <li>
-                    <a href="#">RELAXED.....</a>
-                  </li>
-                </ul>
+                <BreadCrumb/>
                 <div className="showcase-rating">
                   <ion-icon name="star" />
                   <ion-icon name="star" />

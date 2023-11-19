@@ -14,8 +14,8 @@ import womensbanner from "../assets/images/womens-banner.jpg";
 import mousebanner from "../assets/images/electronics-banner-2.jpg";
 import Category from "../Category";
 
-const Header = () => {
-  const [showCart, setShowCart] = useState(false);
+const Header = ({categories}) => {
+
   const [input, setInput] = useState("");
   const navigate = useNavigate();
   
@@ -25,36 +25,18 @@ const Header = () => {
   const gotoCart = () => {
     navigate("/Cart")
   }
-  const gotoCategory = () =>{
-    navigate("/Category")
+  const gotoUser = () => {
+    navigate("/Userpage")
   }
-
-  const fetchData = (value) => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-    .then((response) => response.json())
-    .then((json) =>{
-      const results = json.filter((user) => {
-        return 
-        value &&
-        user && 
-        user.name && 
-        user.name.toLowerCase().includes(value)
-      })
-      console.log(results);
-    });
-  };
-
-  const handleChange = (value) => {
-    setInput(value)
-    fetchData(value)
-  }
+ 
+ 
   
   return (
     <>
       {/*
     - HEADER
   */}
-      <header>
+      <header >
         <div className="header-top">
           <div className="container">
             <ul className="header-social-container">
@@ -121,7 +103,7 @@ const Header = () => {
             
 
             <div className="header-user-actions">
-              <button className="action-btn">
+              <button className="action-btn"onClick={() => gotoUser()}>
                 <ion-icon name="person-outline" />
               </button>
               <button className="action-btn" onClick={()=> gotoWishlist()}>
@@ -136,228 +118,234 @@ const Header = () => {
           </div>
         </div>
         <nav className="desktop-navigation-menu">
-          <div className="container">
-            <ul className="desktop-menu-category-list">
-              <li className="menu-category">
-                <a href="/" className="menu-title">
-                  Home
-                </a>
-              </li>
-              <li className="menu-category">
-                <a href="index.html#" className="menu-title">
-                  Categories
-                </a>
-                <div className="dropdown-panel">
-                  <ul className="dropdown-panel-list">
-                    <li className="menu-title">
-                      <a href="/Category">Electronics</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">Desktop</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">Laptop</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">Camera</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">Tablet</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">Headphone</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">
-                        <img
-                          src={headphonebanner}
-                          alt="headphone collection"
-                          width={250}
-                          height={119}
-                        />
-                      </a>
-                    </li>
-                  </ul>
-                  <ul className="dropdown-panel-list">
-                    <li className="menu-title">
-                      <a href="/Category">Men's</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">Formal</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">Casual</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">Sports</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">Jacket</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">Sunglasses</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">
-                        <img
-                          src={mensbanner}
-                          alt="men's fashion"
-                          width={250}
-                          height={119}
-                        />
-                      </a>
-                    </li>
-                  </ul>
-                  <ul className="dropdown-panel-list">
-                    <li className="menu-title">
-                      <a href="/Category">Women's</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">Formal</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">Casual</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">Perfume</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">Cosmetics</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">Bags</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">
-                        <img
-                          src={womensbanner}
-                          alt="women's fashion"
-                          width={250}
-                          height={119}
-                        />
-                      </a>
-                    </li>
-                  </ul>
-                  <ul className="dropdown-panel-list">
-                    <li className="menu-title">
-                      <a href="/Category">Electronics</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">Smart Watch</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">Smart TV</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">Keyboard</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">Mouse</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">Microphone</a>
-                    </li>
-                    <li className="panel-list-item">
-                      <a href="/Category">
-                        <img
-                          src={mousebanner}
-                          alt="mouse collection"
-                          width={250}
-                          height={119}
-                        />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li className="menu-category">
-                <a href="/Category" className="menu-title">
-                  Men's
-                </a>
-                <ul className="dropdown-list">
-                  <li className="dropdown-item">
-                    <a href="/Category">Shirt</a>
-                  </li>
-                  <li className="dropdown-item">
-                    <a href="/Category">Shorts &amp; Jeans</a>
-                  </li>
-                  <li className="dropdown-item">
-                    <a href="/Category">Safety Shoes</a>
-                  </li>
-                  <li className="dropdown-item">
-                    <a href="/Category">Wallet</a>
-                  </li>
-                </ul>
-              </li>
-              <li className="menu-category">
-                <a href="/Category" className="menu-title">
-                  Women's
-                </a>
-                <ul className="dropdown-list">
-                  <li className="dropdown-item">
-                    <a href="/Category">Dress &amp; Frock</a>
-                  </li>
-                  <li className="dropdown-item">
-                    <a href="/Category">Earrings</a>
-                  </li>
-                  <li className="dropdown-item">
-                    <a href="/Category">Necklace</a>
-                  </li>
-                  <li className="dropdown-item">
-                    <a href="/Category">Makeup Kit</a>
-                  </li>
-                </ul>
-              </li>
-              <li className="menu-category">
-                <a href="/Category" className="menu-title">
-                  Jewelry
-                </a>
-                <ul className="dropdown-list">
-                  <li className="dropdown-item">
-                    <a href="/Category">Earrings</a>
-                  </li>
-                  <li className="dropdown-item">
-                    <a href="/Category">Couple Rings</a>
-                  </li>
-                  <li className="dropdown-item">
-                    <a href="/Category">Necklace</a>
-                  </li>
-                  <li className="dropdown-item">
-                    <a href="/Category">Bracelets</a>
-                  </li>
-                </ul>
-              </li>
-              <li className="menu-category">
-                <a href="/Category" className="menu-title">
-                  Perfume
-                </a>
-                <ul className="dropdown-list">
-                  <li className="dropdown-item">
-                    <a href="/Category">Clothes Perfume</a>
-                  </li>
-                  <li className="dropdown-item">
-                    <a href="/Category">Deodorant</a>
-                  </li>
-                  <li className="dropdown-item">
-                    <a href="/Category">Flower Fragrance</a>
-                  </li>
-                  <li className="dropdown-item">
-                    <a href="index.html#">Air Freshener</a>
-                  </li>
-                </ul>
-              </li>
-              <li className="menu-category">
-                <a href="index.html#" className="menu-title">
-                  Blog
-                </a>
-              </li>
-              <li className="menu-category">
-                <a href="index.html#" className="menu-title">
-                  Hot Offers
-                </a>
-              </li>
-            </ul>
-          </div>
+
+         <div className="container"  >
+
+<ul className="desktop-menu-category-list">
+  <li className="menu-category">
+    <a href="/" className="menu-title">
+      Home
+    </a>
+  </li>
+  <li className="menu-category">
+    <a href="/" className="menu-title">
+      Categories
+    </a>
+    <div className="dropdown-panel">
+      <ul className="dropdown-panel-list">
+        <li className="menu-title">
+          <a href="/Category">Electronics</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">Desktop</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">Laptop</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">Camera</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">Tablet</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">Headphone</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">
+            <img
+              src={headphonebanner}
+              alt="headphone collection"
+              width={250}
+              height={119}
+            />
+          </a>
+        </li>
+      </ul>
+      <ul className="dropdown-panel-list">
+        <li className="menu-title">
+          <a href='/Category'>Men's</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">Formal</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">Casual</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">Sports</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">Jacket</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">Sunglasses</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">
+            <img
+              src={mensbanner}
+              alt="men's fashion"
+              width={250}
+              height={119}
+            />
+          </a>
+        </li>
+      </ul>
+      <ul className="dropdown-panel-list">
+        <li className="menu-title">
+          <a href="/Category">Women's</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">Formal</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">Casual</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">Perfume</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">Cosmetics</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">Bags</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">
+            <img
+              src={womensbanner}
+              alt="women's fashion"
+              width={250}
+              height={119}
+            />
+          </a>
+        </li>
+      </ul>
+      <ul className="dropdown-panel-list">
+        <li className="menu-title">
+          <a href="/Category">Electronics</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">Smart Watch</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">Smart TV</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">Keyboard</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">Mouse</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">Microphone</a>
+        </li>
+        <li className="panel-list-item">
+          <a href="/Category">
+            <img
+              src={mousebanner}
+              alt="mouse collection"
+              width={250}
+              height={119}
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li className="menu-category">
+    <a href="/Category" className="menu-title">
+      Men's
+    </a>
+    <ul className="dropdown-list">
+      <li className="dropdown-item">
+        <a href="/Category">Shirt</a>
+      </li>
+      <li className="dropdown-item">
+        <a href="/Category">Shorts &amp; Jeans</a>
+      </li>
+      <li className="dropdown-item">
+        <a href="/Category">Safety Shoes</a>
+      </li>
+      <li className="dropdown-item">
+        <a href="/Category">Wallet</a>
+      </li>
+    </ul>
+  </li>
+  <li className="menu-category">
+    <a href="/Category" className="menu-title">
+      Women's
+    </a>
+    <ul className="dropdown-list">
+      <li className="dropdown-item">
+        <a href="/Category">Dress &amp; Frock</a>
+      </li>
+      <li className="dropdown-item">
+        <a href="/Category">Earrings</a>
+      </li>
+      <li className="dropdown-item">
+        <a href="/Category">Necklace</a>
+      </li>
+      <li className="dropdown-item">
+        <a href="/Category">Makeup Kit</a>
+      </li>
+    </ul>
+  </li>
+  <li className="menu-category">
+    <a href="/Category" className="menu-title">
+      Jewelry
+    </a>
+    <ul className="dropdown-list">
+      <li className="dropdown-item">
+        <a href="/Category">Earrings</a>
+      </li>
+      <li className="dropdown-item">
+        <a href="/Category">Couple Rings</a>
+      </li>
+      <li className="dropdown-item">
+        <a href="/Category">Necklace</a>
+      </li>
+      <li className="dropdown-item">
+        <a href="/Category">Bracelets</a>
+      </li>
+    </ul>
+  </li>
+  <li className="menu-category">
+    <a href="/Category" className="menu-title">
+      Perfume
+    </a>
+    <ul className="dropdown-list">
+      <li className="dropdown-item">
+        <a href="/Category">Clothes Perfume</a>
+      </li>
+      <li className="dropdown-item">
+        <a href="/Category">Deodorant</a>
+      </li>
+      <li className="dropdown-item">
+        <a href="/Category">Flower Fragrance</a>
+      </li>
+      <li className="dropdown-item">
+        <a href="index.html#">Air Freshener</a>
+      </li>
+    </ul>
+  </li>
+  <li className="menu-category">
+    <a href="index.html#" className="menu-title">
+      Blog
+    </a>
+  </li>
+  <li className="menu-category">
+    <a href="index.html#" className="menu-title">
+      Hot Offers
+    </a>
+  </li>
+</ul>
+
+</div> 
+        
+            
+
         </nav>
         <div className="mobile-bottom-navigation">
           <button className="action-btn" data-mobile-menu-open-btn="">
@@ -601,7 +589,7 @@ const Header = () => {
           </div>
         </nav>
       </header>
-      {showCart && <Cart setShowCart={setShowCart} />}
+      
     </>
   );
 };

@@ -1,10 +1,13 @@
 import React from 'react'
-import clothes3 from './assets/images/products/clothes-3.jpg';
-import clothes4 from './assets/images/products/clothes-4.jpg'
+import Showcase2 from './components/Showcase2';
+import useFetch from './hooks/useFetch';
+import { useParams } from 'react-router-dom';
 
+import { Context } from './utils/context';
 import Showcase from './components/Showcase';
 
 const Category = ({categories}) => {
+  const {id} = useParams();
   return (
     <>
     {/*
@@ -359,11 +362,6 @@ const Category = ({categories}) => {
             </ul>
             <div className="product-grid">
             <Showcase/>
-            <Showcase/>
-            <Showcase/>
-            <Showcase/>
-              
-
             </div>
           </div>
         </div>
