@@ -1,7 +1,6 @@
-import Sidebar from "./Sidebar";
 // import "../css/ordertablecss/bootstrap.min.css";
 // import "../css/ordertablecss/orderstyle.module.css"
-import "../css/Userpage.css"
+
 
 const Orderstable = () => {
   return (

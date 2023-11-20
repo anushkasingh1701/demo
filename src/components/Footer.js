@@ -349,7 +349,7 @@ const Footer = () => {
           className="payment-img"
         />
         <p className="copyright">
-          Copyright © <a href="index.html#">Anon</a> all rights reserved.
+          Copyright © <a href="index.html#">Aura Alley</a> all rights reserved.
         </p>
       </div>
     </div>

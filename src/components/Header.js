@@ -7,7 +7,7 @@ import Cart from "../Cart";
 import Search from "./search/Search";
 
 //headerimages
-import headerlogo from "../assets/images/logo/logo.svg";
+import headerlogo from "../assets/images/logo/aura-alley-high-resolution-logo-black-transparent (1).png";
 import headphonebanner from "../assets/images/electronics-banner-1.jpg";
 import mensbanner from "../assets/images/mens-banner.jpg";
 import womensbanner from "../assets/images/womens-banner.jpg";
@@ -84,7 +84,7 @@ const Header = ({categories}) => {
         <div className="header-main">
           <div className="container">
             <a href="index.html#" className="header-logo">
-              <img src={headerlogo} alt="Anon's logo" width={120} height={36} />
+              <img src={headerlogo} alt="Aura Alley's logo" width={120} height={36} />
             </a>
             <div className="header-search-container">
               
