@@ -11,6 +11,8 @@ This repository contains the frontend code for an ecommerce website built using 
 - Signup
 - Profile Page
 
+Here is the live link to the website: [Demo Website](https://demo-fawn-nu-15.vercel.app/)
+
 ## Installation
 
 To run this project locally, follow these steps:
@@ -18,13 +20,13 @@ To run this project locally, follow these steps:
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/ecommerce-frontend.git
+   git clone https://github.com/anushkasingh1701/demo.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd ecommerce-frontend
+   cd demo
    ```
 
 3. Install dependencies:
